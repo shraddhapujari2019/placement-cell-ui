@@ -3,7 +3,7 @@
   <hr />
   <form [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="mb-3">
-      <label for="userId" class="form-label">User Id</label>
+      <label for="userId" class="form-label">username</label>
       <input
         type="email"
         class="form-control"
@@ -16,12 +16,12 @@
           loginForm.controls.userId.invalid && loginForm.controls.userId.dirty
         "
       >
-        please enter a valid user id.
+        please enter a valid user username.
       </div>
     </div>
 
     <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
+      <label for="password" class="form-label">password</label>
       <input
         type="password"
         class="form-control"

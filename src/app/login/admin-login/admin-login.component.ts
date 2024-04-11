@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/service/admin.service';
-import { AdminLogin } from 'src/app/model/AdminLogin';
+import { UserLogin } from 'src/app/model/UserLogin';
 
 @Component({
   selector: 'app-admin-login',
@@ -19,19 +19,19 @@ export class AdminLoginComponent implements OnInit {
   ngOnInit(): void {
 
     this.loginForm =  this.formBuilder.group({
-      userId:['',[Validators.required,Validators.email]],
+      userId:['',[Validators.required,Validators.pattern("[A-Za-z0-9.]{6,15}")]],
       password:['',[Validators.required,Validators.minLength(7),Validators.maxLength(15)]]
     })
 
-    let userId:string = localStorage.getItem("userId");
+    let userId: string = localStorage.getItem("userId");
     let role: string = localStorage.getItem("role");
 
-    if(userId != null && role!= null){
+    if(userId != undefined && role != undefined){
 
       if(role == 'admin')
         this.router.navigate(['adminhome']);
-      else if (role == 'user')
-        this.router.navigate(['home']);  
+      else if (role == 'student')
+        this.router.navigate(['userhome']);  
   }
 
 }
@@ -39,7 +39,7 @@ login(){
   let userId = this.loginForm.value.userId;
   let role = "admin";
 
-  this.adminService.adminLogin(new AdminLogin(userId,this.loginForm.value.password)).subscribe(
+  this.adminService.adminLogin(new UserLogin(userId,this.loginForm.value.password)).subscribe(
     (data) => {
       localStorage.setItem("userId",userId);
       localStorage.setItem("role",role);
@@ -50,5 +50,5 @@ login(){
       this.errorMessage = error;
     }
   )    
-}
+  }
 }
