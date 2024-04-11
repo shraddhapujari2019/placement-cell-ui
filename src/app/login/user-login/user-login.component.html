@@ -50,14 +50,12 @@
     <button [disabled]="false" type="button" class="btn btn-primary">
       Register
     </button>
-    <br /><br />
-    <p class="text-center">
-      <a [routerLink]="['/forgotPassword']">Forgot Password?</a>
-    </p>
+    <div *ngIf="errorMessage" class="text-danger">
+      {{ errorMessage }}
+    </div>
   </form>
-
-  <div *ngIf="errorMessage" class="error error-danger">
-    {{ errorMessage }}
-  </div>
+  <p class="text-center">
+    <a [routerLink]="['/forgotPassword']">Forgot Password?</a>
+  </p>
   <hr />
 </div>
