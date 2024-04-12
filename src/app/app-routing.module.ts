@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminHomeComponent } from './admin-home/admin-home.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { UserHomeComponent } from './user-home/user-home.component';
-import { UserLoginComponent } from './user-login/user-login.component';
+import { AdminGuardService } from './service/admin-guard.service';
+import { AdminHomeComponent } from './home/admin-home/admin-home.component';
+import { AdminLoginComponent } from './login/admin-login/admin-login.component';
+import { AppHomeComponent } from './home/app-home/app-home.component';
+import { UserGuardService } from './service/user-guard.service';
+import { UserHomeComponent } from './home/user-home/user-home.component';
+import { UserLoginComponent } from './login/user-login/user-login.component';
 
 
 const routes: Routes = [
 
   {
     path:"",
-    component: UserLoginComponent
+    component: AppHomeComponent
   },
   {
-    path:"index",
-    component: UserHomeComponent
+    path:"home",
+    component: AppHomeComponent
   },
   {
     path:"login",
@@ -23,6 +26,16 @@ const routes: Routes = [
   {
     path:"adminlogin",
     component:AdminLoginComponent
+  },
+  {
+    path:"userhome",
+    component: UserHomeComponent,
+    canActivate: [UserGuardService]
+  },
+  {
+    path:"adminhome",
+    component: AdminHomeComponent,
+    canActivate: [AdminGuardService]
   },
   {
     path:"**",

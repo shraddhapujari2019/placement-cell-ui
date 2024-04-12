@@ -1,11 +1,11 @@
 <div class="center-box" style="height: 40%; width: 20%; margin: 11%40%">
-  <h1>User Login</h1>
+  <h1>Admin Login</h1>
   <hr />
   <form [formGroup]="loginForm" (ngSubmit)="login()">
     <div class="mb-3">
-      <label for="userId" class="form-label">User Id</label>
+      <label for="userId" class="form-label">username</label>
       <input
-        type="text"
+        type="email"
         class="form-control"
         id="userId"
         formControlName="userId"
@@ -16,12 +16,12 @@
           loginForm.controls.userId.invalid && loginForm.controls.userId.dirty
         "
       >
-        please enter a valid user id.
+        please enter a valid user username.
       </div>
     </div>
 
     <div class="mb-3">
-      <label for="password" class="form-label">Password</label>
+      <label for="password" class="form-label">password</label>
       <input
         type="password"
         class="form-control"
@@ -46,20 +46,9 @@
     >
       Login
     </button>
-    &nbsp;
-    <button
-    [disabled]="false"
-    type="button"
-    class="btn btn-primary"
-  >
-    Register
-  </button>
-  <br>
-  <a>Forgot Password?</a>
+    <div *ngIf="errorMessage" class="text-danger">
+      {{ errorMessage }}
+    </div>
   </form>
-
-  <div *ngIf="errorMessage" class="error error-danger">
-    {{ errorMessage }}
-  </div>
   <hr />
 </div>

@@ -20,31 +20,30 @@ export class UserLoginComponent implements OnInit {
 
     this.loginForm =  this.formBuilder.group({
 
-      userId:['',[Validators.required,Validators.pattern("[0-9]{5}")]],
+      userId:['',[Validators.required,Validators.pattern("[A-Za-z0-9.]{6,15}")]],
       password:['',[Validators.required,Validators.minLength(7),Validators.maxLength(15)]]
     })
 
     let userId = localStorage.getItem("userId");
     let role = localStorage.getItem("role");
 
-    // if(userId != null && role!= null){
-
-    //   if(role == 'admin')
-    //     this.router.navigate(['adminhome']);
-    //   else if (role == 'user')
-    //     this.router.navigate(['home']);  
-    // }
+    if(userId != undefined && role != undefined){
+      if(role == 'admin')
+        this.router.navigate(['adminhome']);
+      else if (role == 'student')
+        this.router.navigate(['userhome']);  
+    }
   }
 
   login(){
     let userId = this.loginForm.value.userId;
-    let role = "user";
+    let role = "student";
 
     this.userService.userLogin(new UserLogin(userId,this.loginForm.value.password)).subscribe(
       (data) => {
-        localStorage.setItem("userId",userId);
-        localStorage.setItem("role",role);
-        this.router.navigate(['home']);
+        localStorage.setItem("userId", userId);
+        localStorage.setItem("role", role);
+        this.router.navigate(['userhome']);
       },
       (error) => {
         this.loginForm.reset();
