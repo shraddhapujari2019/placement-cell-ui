@@ -11,7 +11,7 @@ export class AppHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.collegeName = "ABCD College, Pimpri-Chinchwad"
+    this.collegeName = "International Institute of Management Science - [IIMS] Chinchwad, Pune"
   }
 
 }
