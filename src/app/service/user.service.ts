@@ -11,20 +11,35 @@ import { Message } from '../model/Message';
 })
 export class UserService {
   userUrl: string = "http://localhost:8081/users";
+  users: UserLogin[] = [];
   
   constructor(
         private http: HttpClient
-  ) { }
+  ) {
+    this.users.push( new UserLogin("student1", "user1@123"));
+    this.users.push( new UserLogin("student2", "user2@123"));
+    this.users.push( new UserLogin("student3", "user3@123"));
+  }
 
   //1
   //check if the user is an existing one and with valid password
-  userLogin(userLogin: UserLogin):Observable<Message>{
+  userLogin(userLogin: UserLogin):Observable<Message>| Observable<any>{
     const url= this.userUrl+"/login";
 
-    return this.http.post<Message>(url,userLogin).pipe(
-      tap(data => console.log("Response : "+JSON.stringify(data))),
-      catchError(this.handleError)
-    );    
+    // return this.http.post<Message>(url,userLogin).pipe(
+    //   tap(data => console.log("Response : "+JSON.stringify(data))),
+    //   catchError(this.handleError)
+    // );
+    let temp = this.users.filter(user => user.userId===userLogin.userId && user.password===userLogin.password)[0];
+    
+    if(temp==undefined){
+      return throwError("Invalid username or password");
+    }
+    return Observable.create(observer => {
+      observer.next(temp);
+      //call complete if you want to close this stream (like a promise)
+      observer.complete();
+    });
   }
   
   // Error handler 

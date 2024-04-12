@@ -1,0 +1,52 @@
+<!-- Bootstrap Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Placement Cell</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']">Student Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/adminlogin']">Admin Login</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main>
+  <div>
+    <br /><br /><br /><br /><br /><br />
+    <p class="text-secondary text-center">
+      Welcome to the Placement Cell of {{ collegeName }}. Our mission is to
+      connect students with potential employers and facilitate placements.
+    </p>
+  </div>
+  <div class="text-secondary text-center">
+    <p>New student? <a [routerLink]="['/signup']">Register</a> here</p>
+  </div>
+</main>
+
+<footer class="footer mt-auto py-3">
+  <div class="container text-center">
+    <h6>Contact Us</h6>
+    <p>Contact the Placement Cell team for any queries or assistance:</p>
+
+    <p>Email: placement@collegename.edu</p>
+    <p>Phone: +1 234 567 890</p>
+    <p><a href="#about">About Us</a> | <a href="#contact">Contact Us</a></p>
+    <p>&copy; 2024 {{ collegeName }} Placement Cell</p>
+  </div>
+</footer>
