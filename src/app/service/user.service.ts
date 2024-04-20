@@ -10,7 +10,7 @@ import { Message } from '../model/Message';
   providedIn: 'root'
 })
 export class UserService {
-  userUrl: string = "http://localhost:8081/users";
+  userUrl: string = "http://192.168.1.2:8089";
   users: UserLogin[] = [];
   
   constructor(
@@ -23,23 +23,23 @@ export class UserService {
 
   //1
   //check if the user is an existing one and with valid password
-  userLogin(userLogin: UserLogin):Observable<Message>| Observable<any>{
+  userLogin(userLogin: UserLogin): Observable<string>|Observable<any>{
     const url= this.userUrl+"/login";
 
-    // return this.http.post<Message>(url,userLogin).pipe(
-    //   tap(data => console.log("Response : "+JSON.stringify(data))),
-    //   catchError(this.handleError)
-    // );
-    let temp = this.users.filter(user => user.userId===userLogin.userId && user.password===userLogin.password)[0];
+    return this.http.post(url,userLogin, {responseType: 'text'}).pipe(
+      tap(data => console.log("Response : "+data)),
+      catchError(this.handleError)
+    );
+ //   let temp = this.users.filter(user => user.username===userLogin.username && user.password===userLogin.password)[0];
     
-    if(temp==undefined){
-      return throwError("Invalid username or password");
-    }
-    return Observable.create(observer => {
-      observer.next(temp);
-      //call complete if you want to close this stream (like a promise)
-      observer.complete();
-    });
+    // if(temp==undefined){
+    //   return throwError(()=> new Error("Invalid username or password"));
+    // }
+    // return Observable.create(observer => {
+    //   observer.next(temp);
+    //   //call complete if you want to close this stream (like a promise)
+    //   observer.complete();
+    // });
   }
   
   // Error handler 
@@ -62,7 +62,6 @@ export class UserService {
       errorMessage = err.error.message;
     }
 
-    return throwError(errorMessage);
+    return throwError(()=> new Error(errorMessage));
   }
-
 }

@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
 import { AdminService } from './service/admin.service';
 import { AppHomeComponent } from './home/app-home/app-home.component';
+import { DriveDetailsComponent } from './details/drive-details/drive-details.component';
+import { StudentDetailsComponent } from './details/student-details/student-details.component';
+import { CompanyDetailsComponent } from './details/company-details/company-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { AppHomeComponent } from './home/app-home/app-home.component';
     AdminHomeComponent,
     UserLoginComponent,
     AdminLoginComponent,
-    AppHomeComponent
+    AppHomeComponent,
+    DriveDetailsComponent,
+    StudentDetailsComponent,
+    CompanyDetailsComponent
   ],
   imports: [
     BrowserModule,

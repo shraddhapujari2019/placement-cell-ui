@@ -14,6 +14,17 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/adminhome/students']">Students</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/adminhome/drives']">Drives</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/adminhome/companies']">Companies</a>
+      </li>
+    </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a
@@ -29,7 +40,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#" (click)="logout()">logout</a>
-          <a class="dropdown-item" href="#">profile</a>
+          <a class="dropdown-item"  [routerLink]="['/adminprofile']">profile</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">help</a>
         </div>
@@ -37,3 +48,13 @@
     </ul>
   </div>
 </nav>
+
+<router-outlet></router-outlet>
+<!-- Admin home details to be shown here -->
+<!-- all the upcoming drives / btn to perfom modifications -->
+<!-- all the company details  / btn to perform modifications-->
+
+<!-- option to add company details -->
+<!-- option to add drive details-->
+
+<!-- option to check the applied students for specifi -->
