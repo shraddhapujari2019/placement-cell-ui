@@ -1,42 +1,90 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminGuardService } from './service/admin-guard.service';
+import { AdminGuardService } from './route-guards/admin-guard.service';
 import { AdminHomeComponent } from './home/admin-home/admin-home.component';
 import { AdminLoginComponent } from './login/admin-login/admin-login.component';
 import { AppHomeComponent } from './home/app-home/app-home.component';
-import { UserGuardService } from './service/user-guard.service';
+import { UserGuardService } from './route-guards/user-guard.service';
 import { UserHomeComponent } from './home/user-home/user-home.component';
 import { UserLoginComponent } from './login/user-login/user-login.component';
+import { DriveDetailsComponent } from './details/drive-details/drive-details.component';
+import { StudentDetailsComponent } from './details/student-details/student-details.component';
+import { CompanyDetailsComponent } from './details/company-details/company-details.component';
 
 
 const routes: Routes = [
 
   {
     path:"",
-    component: AppHomeComponent
+    component: AppHomeComponent,
+    outlet:"primary"
   },
   {
     path:"home",
-    component: AppHomeComponent
+    component: AppHomeComponent,
+    outlet:"primary"
   },
   {
     path:"login",
-    component: UserLoginComponent
+    component: UserLoginComponent,
+    outlet:"primary"
   },
   {
     path:"adminlogin",
-    component:AdminLoginComponent
+    component:AdminLoginComponent,
+    outlet:"primary"
   },
   {
-    path:"userhome",
-    component: UserHomeComponent,
-    canActivate: [UserGuardService]
+    path:"userhome", 
+    children:[
+      {
+        path:"",
+        component: UserHomeComponent,
+        canActivate: [UserGuardService],
+        outlet:"primary"
+      },
+      {
+        path:"drives",
+        component: DriveDetailsComponent,
+        canActivate: [UserGuardService],
+        outlet:"drives"
+      },
+      {
+        path:"companies",
+        component: CompanyDetailsComponent,
+        canActivate: [UserGuardService],
+        outlet:"companies"
+      }
+    ]
   },
   {
     path:"adminhome",
-    component: AdminHomeComponent,
-    canActivate: [AdminGuardService]
+    children:[
+      { 
+        path: "",
+        component: AdminHomeComponent,
+        canActivate: [AdminGuardService],
+        outlet:"primary"
+      },
+      {
+        path:"students",
+        component: StudentDetailsComponent,
+        canActivate: [AdminGuardService],
+        outlet:"primary"
+      },
+      {
+        path:"drives",
+        component: DriveDetailsComponent,
+        canActivate: [AdminGuardService]
+      },
+      {
+        path:"companies",
+        component: CompanyDetailsComponent,
+        canActivate: [AdminGuardService]
+      }
+    ]
   },
+
   {
     path:"**",
     redirectTo:"",

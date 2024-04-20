@@ -14,6 +14,14 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/userhome/drives"]'>Drives</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]='["/userhome/companies"]'>Companies</a>
+      </li>
+    </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a
@@ -38,4 +46,11 @@
   </div>
 </nav>
 
-<p>User Home</p>
+<!-- User home details to be shown here -->
+<!-- all the upcoming drives -->
+<!-- all the company details that admin has added -->
+
+<!-- Details -->
+<router-outlet></router-outlet>
+
+
