@@ -1,0 +1,15 @@
+.nav-link {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+    color: blue;
+    background-color: aquamarine;
+
+}
+
+.container-fluid {
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(184,147,111,0.8577556022408963) 64%, rgba(181,125,46,1) 100%);
+}

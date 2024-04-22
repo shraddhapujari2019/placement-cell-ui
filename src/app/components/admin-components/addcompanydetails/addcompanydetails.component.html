@@ -1,0 +1,140 @@
+<div class="px-3">
+
+    <div class="px-3 pt-1 pb-2">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="PageHeader3 w-100  ml-2 ml-lg-0 ml-md-0 ml-xl-0">Add Company Details Form</h1>
+            </div>
+        </div>
+    </div>
+
+    <form name="productForm" #requestForm="ngForm">
+        <div class="row ml-0 mr-0">
+            <div class="grey-panel  col-lg-12  ">
+
+                <div class="row mx-0 bg-white mb-2 px-2 py-3 border">
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0">
+                            <label class="pt-1">Company Name <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Company Name"
+                                [(ngModel)]="companyDetails.company_name" name="orgnizationName" #orgName="ngModel"
+                                [ngClass]="{ 'is-invalid': orgName.errors && orgName.touched }" required />
+                            <div *ngIf="orgName.touched && orgName.errors">
+                                <!-- <div class="error-msg" *ngIf="orgName.errors?.pattern">
+                                {{utilityService.getMessage(validationConstants.VALIDATION,
+                                validationConstants.INVALID_ADDR)}}<br>
+                            </div> -->
+                                <div class="error-msg" *ngIf="orgName.errors?.required">
+                                    Company Name is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Organization Type <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Orgnization Type"
+                                [(ngModel)]="companyDetails.org_type" name="representativeName"
+                                [ngClass]="{ 'is-invalid': representativeName.errors && representativeName.touched }"
+                                #representativeName="ngModel" required>
+                            <div *ngIf="representativeName.touched && representativeName.errors">
+                                <div class="error-msg" *ngIf="representativeName.errors?.required">
+                                    Organization Type is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Sector <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Sector "
+                                [(ngModel)]="companyDetails.sector" name="sector"
+                                [ngClass]="{ 'is-invalid': sector.errors && sector.touched }" #sector="ngModel"
+                                required>
+                            <div *ngIf="sector.touched && sector.errors">
+                                <div class="error-msg" *ngIf="sector.errors?.required">
+                                    Sector is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Company Website <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Company website "
+                                [(ngModel)]="companyDetails.company_website" name="website"
+                                [ngClass]="{ 'is-invalid': website.errors && website.touched }" #website="ngModel"
+                                required>
+                            <div *ngIf="website.touched && website.errors">
+                                <div class="error-msg" *ngIf="website.errors?.required">
+                                    Company Website is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Job Location<span class="redLabel"> *</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Job Location "
+                                [(ngModel)]="companyDetails.job_location" name="location"
+                                [ngClass]="{ 'is-invalid': location.errors && location.touched }" #location="ngModel"
+                                required>
+                            <div *ngIf="location.touched && location.errors">
+                                <div class="error-msg" *ngIf="location.errors?.required">
+                                    Job Location is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Role<span class="redLabel"> *</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Role"
+                                [(ngModel)]="companyDetails.role" name="role"
+                                [ngClass]="{ 'is-invalid': role.errors && role.touched }" #role="ngModel" required>
+                            <div *ngIf="role.touched && role.errors">
+                                <div class="error-msg" *ngIf="role.errors?.required">
+                                    Role is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2 w-100">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Company Info <span class="redLabel">*</span></label>
+                            <textarea type="text" class="form-control " rows="4" value=""
+                                placeholder="Enter Company Info " [(ngModel)]="companyDetails.company_info" name="info"
+                                [ngClass]="{ 'is-invalid': info.errors && info.touched }" #info="ngModel"
+                                required></textarea>
+                            <div *ngIf="info.touched && info.errors">
+                                <div class="error-msg" *ngIf="info.errors?.required">
+                                    Company Info is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row ml-0 mr-0 e">
+                    <div class="col-12 col-md-12 ml-md-auto text-md-right text-right pt-4 pb-4">
+
+                        <button class=" btn btn-primary" (click)="submitRequest()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>

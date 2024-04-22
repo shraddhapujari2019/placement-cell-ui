@@ -1,0 +1,11 @@
+.navbar-brand:hover {
+    cursor: pointer;
+}
+
+
+.navbar-brand {
+ font-size: 22px;
+ font-weight: bold;
+ line-height: 2rem;
+ color: white !important;
+}

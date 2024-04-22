@@ -1,5 +1,5 @@
 <!-- Bootstrap Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Placement Cell</a>
   <button
     class="navbar-toggler"
@@ -36,4 +36,17 @@
       </li>
     </ul>
   </div>
-</nav>
+</nav> -->
+
+<hr class="pt-2">
+
+<div class="row py-1 px-5 container-fluid">
+
+    <div class="col-4" (click)="navigateToChild('company')"><a class="nav-link"><input type="radio" [checked]="selectedTab=='company'"> Add New Company Details</a></div>
+    <div class="col-4" (click)="navigateToChild('drive')"><a class="nav-link"><input type="radio" [checked]="selectedTab=='drive'"> Add Drive Details </a></div>
+    <div class="col-4" (click)="navigateToChild('placement')"><a class="nav-link"><input type="radio" [checked]="selectedTab=='placement'"> Add Placed Students</a></div>
+</div>
+<hr class="">
+
+
+<router-outlet></router-outlet>

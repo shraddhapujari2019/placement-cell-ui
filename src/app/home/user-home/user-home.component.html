@@ -1,41 +1,15 @@
-<!-- Bootstrap Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Placement Cell</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<hr class="pt-2">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          {{ userId }}
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#" (click)="logout()">logout</a>
-          <a class="dropdown-item" href="#">profile</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">help</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
+<div class="row py-1 px-5 container-fluid">
 
-<p>User Home</p>
+    <div class="col-4" (click)="navigateToChild('company')"><a class="nav-link"><input type="radio"
+                [checked]="selectedTab=='company'"> Apply for New Company</a></div>
+    <div class="col-4" (click)="navigateToChild('drive')"><a class="nav-link"><input type="radio"
+                [checked]="selectedTab=='drive'"> Upcoming Drives</a></div>
+    <div class="col-4" (click)="navigateToChild('results')"><a class="nav-link"><input type="radio"
+                [checked]="selectedTab=='results'"> Check Drive Results</a></div>
+</div>
+<hr class="">
+
+
+<router-outlet></router-outlet>
