@@ -19,6 +19,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { ApplyComponent } from './components/student-components/apply/apply.component';
 import { UpcomingdrivesComponent } from './components/student-components/upcomingDrives/upcomingdrives.component';
 import { CheckResultsComponent } from './components/student-components/check-results/check-results.component';
+import { DriveDetailsComponent } from './details/drive-details/drive-details.component';
+import { StudentDetailsComponent } from './details/student-details/student-details.component';
+import { CompanyDetailsComponent } from './details/company-details/company-details.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { CheckResultsComponent } from './components/student-components/check-res
     ProfileComponent,
     ApplyComponent,
     UpcomingdrivesComponent,
-    CheckResultsComponent
+    CheckResultsComponent,
+    DriveDetailsComponent,
+    StudentDetailsComponent,
+    CompanyDetailsComponent
   ],
   imports: [
     BrowserModule,

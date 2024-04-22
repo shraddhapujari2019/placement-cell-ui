@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminGuardService } from './service/admin-guard.service';
+import { AdminGuardService } from './route-guards/admin-guard.service';
 import { AdminHomeComponent } from './home/admin-home/admin-home.component';
 import { AdminLoginComponent } from './login/admin-login/admin-login.component';
 import { AppHomeComponent } from './home/app-home/app-home.component';
-import { UserGuardService } from './service/user-guard.service';
+import { UserGuardService } from './route-guards/user-guard.service';
 import { UserHomeComponent } from './home/user-home/user-home.component';
 import { UserLoginComponent } from './login/user-login/user-login.component';
 import { AddcompanydetailsComponent } from './components/admin-components/addcompanydetails/addcompanydetails.component';
@@ -92,6 +92,7 @@ const routes: Routes = [
     ],
     canActivate: [AdminGuardService]
   },
+
   {
     path: "**",
     redirectTo: "",
