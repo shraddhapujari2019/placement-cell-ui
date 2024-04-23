@@ -1,5 +1,196 @@
-<br>
+<div class="px-3">
 
-<br>
-<br>
-<div>This is sample page for Adding <b> Drive details</b></div>
+    <div class="px-3 pt-1 pb-2">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="PageHeader3 w-100  ml-2 ml-lg-0 ml-md-0 ml-xl-0">Add Drive Details Form</h1>
+            </div>
+        </div>
+    </div>
+
+    <form name="productForm" #requestForm="ngForm">
+        <div class="row ml-0 mr-0">
+            <div class="grey-panel  col-lg-12  ">
+
+                <div class="row mx-0 bg-white mb-2 px-2 py-3 border">
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0">
+                            <label class="pt-1">Company ID <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Company ID"
+                                [(ngModel)]="drive.companyId" name="orgName" #orgName="ngModel"
+                                [ngClass]="{ 'is-invalid': orgName.errors && orgName.touched }" required />
+                            <div *ngIf="orgName.touched && orgName.errors">
+                                <!-- <div class="error-msg" *ngIf="orgName.errors?.pattern">
+                                {{utilityService.getMessage(validationConstants.VALIDATION,
+                                validationConstants.INVALID_ADDR)}}<br>
+                            </div> -->
+                                <div class="error-msg" *ngIf="orgName.errors?.required">
+                                    Company ID is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Drive Date <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Drive Date"
+                                [(ngModel)]="drive.driveDate" name="Date"
+                                [ngClass]="{ 'is-invalid': Date.errors && Date.touched }"
+                                #Date="ngModel" required>
+                            <div *ngIf="Date.touched && Date.errors">
+                                <div class="error-msg" *ngIf="Date.errors?.required">
+                                    Drive Date is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Drive CTC <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Drive Location"
+                                [(ngModel)]="drive.driveLocation" name="CTC"
+                                [ngClass]="{ 'is-invalid': CTC.errors && CTC.touched }" #CTC="ngModel"
+                                required>
+                            <div *ngIf="CTC.touched && CTC.errors">
+                                <div class="error-msg" *ngIf="CTC.errors?.required">
+                                    Drive Location is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Offered CTC <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Offered CTC"
+                                [(ngModel)]="drive.offeredCtc" name="CTC"
+                                [ngClass]="{ 'is-invalid': CTC.errors && CTC.touched }" #CTC="ngModel"
+                                required>
+                            <div *ngIf="CTC.touched && CTC.errors">
+                                <div class="error-msg" *ngIf="CTC.errors?.required">
+                                    Offered CTC is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">SSC Marks<span class="redLabel"> *</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter SSC Marks "
+                                [(ngModel)]="drive.sscMarks" name="SSC"
+                                [ngClass]="{ 'is-invalid': SSC.errors && SSC.touched }" #SSC="ngModel"
+                                required>
+                            <div *ngIf="SSC.touched && SSC.errors">
+                                <div class="error-msg" *ngIf="SSC.errors?.required">
+                                    SSC Marks are required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">HSC Marks<span class="redLabel"> *</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter HSC Marks "
+                                [(ngModel)]="drive.hscMarks" name="HSC"
+                                [ngClass]="{ 'is-invalid': HSC.errors && HSC.touched }" #HSC="ngModel"
+                                required>
+                            <div *ngIf="HSC.touched && HSC.errors">
+                                <div class="error-msg" *ngIf="HSC.errors?.required">
+                                    HSC Marks are required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Graduation Marks<span class="redLabel"> *</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Graduation Marks"
+                                [(ngModel)]="drive.graduationMarks" name="Graduation"
+                                [ngClass]="{ 'is-invalid': Graduation.errors && Graduation.touched }" #Graduation="ngModel" required>
+                            <div *ngIf="Graduation.touched && Graduation.errors">
+                                <div class="error-msg" *ngIf="Graduation.errors?.required">
+                                    Graduation Marks are required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Active Backlog Status<span class="redLabel"> *</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Active Backlog Status"
+                                [(ngModel)]="drive.activeBacklogStatus" name="ActiveBacklog"
+                                [ngClass]="{ 'is-invalid': ActiveBacklog.errors && ActiveBacklog.touched }" #ActiveBacklog="ngModel" required>
+                            <div *ngIf="ActiveBacklog.touched && ActiveBacklog.errors">
+                                <div class="error-msg" *ngIf="ActiveBacklog.errors?.required">
+                                    Active Backlog Status is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Max Active Backlogs Allowed<span class="redLabel"> *</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Max Active Backlogs Allowed"
+                                [(ngModel)]="drive.maxActiveBacklogAllowed" name="MaxActiveBacklogs"
+                                [ngClass]="{ 'is-invalid': MaxActiveBacklogs.errors && MaxActiveBacklogs.touched }" #MaxActiveBacklogs="ngModel" required>
+                            <div *ngIf="MaxActiveBacklogs.touched && MaxActiveBacklogs.errors">
+                                <div class="error-msg" *ngIf="MaxActiveBacklogs.errors?.required">
+                                    Max Active Backlogs Allowed are required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Historical Backlog Status<span class="redLabel"> *</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Historical Backlog Status"
+                                [(ngModel)]="drive.historicalBacklogStatus" name="HistBacklog"
+                                [ngClass]="{ 'is-invalid': HistBacklog.errors && HistBacklog.touched }" #HistBacklog="ngModel" required>
+                            <div *ngIf="HistBacklog.touched && HistBacklog.errors">
+                                <div class="error-msg" *ngIf="HistBacklog.errors?.required">
+                                    Historical Backlog Status is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Max Historical Backlogs Allowed<span class="redLabel"> *</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Max Historical Backlogs Allowed"
+                                [(ngModel)]="drive.maxHistBacklogAllowed" name="MaxHistBacklog"
+                                [ngClass]="{ 'is-invalid': MaxHistBacklog.errors && MaxHistBacklog.touched }" #MaxHistBacklog="ngModel" required>
+                            <div *ngIf="MaxHistBacklog.touched && MaxHistBacklog.errors">
+                                <div class="error-msg" *ngIf="MaxHistBacklog.errors?.required">
+                                    Max Historical Backlogs Allowed are required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="row ml-0 mr-0 e">
+                    <div class="col-12 col-md-12 ml-md-auto text-md-right text-right pt-4 pb-4">
+
+                        <button class=" btn btn-primary" (click)="submitRequest()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>

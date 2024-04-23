@@ -18,7 +18,7 @@
                         <div class="form-group mr-1 p-0 mb-0">
                             <label class="pt-1">Company Name <span class="redLabel">*</span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Company Name"
-                                [(ngModel)]="companyDetails.company_name" name="orgnizationName" #orgName="ngModel"
+                                [(ngModel)]="companyDetails.company_name" name="orgName" #orgName="ngModel"
                                 [ngClass]="{ 'is-invalid': orgName.errors && orgName.touched }" required />
                             <div *ngIf="orgName.touched && orgName.errors">
                                 <!-- <div class="error-msg" *ngIf="orgName.errors?.pattern">

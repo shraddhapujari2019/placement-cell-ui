@@ -65,4 +65,8 @@ export class AdminService {
   submitAddCompanyRequest(payload) {
     return this.http.post('http://localhost:8089/company/create', payload);
   }
+
+  submitAddDriveRequest(payload) {
+    return this.http.post('http://localhost:8089/drive/create', payload);
+  }
 }
