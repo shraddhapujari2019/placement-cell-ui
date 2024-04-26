@@ -1,5 +1,143 @@
-<br>
+<div class="px-3">
 
-<br>
-<br>
-<div>This is sample page for <b> Placed studdent details</b></div>
+    <div class="px-3 pt-1 pb-2">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="PageHeader3 w-100  ml-2 ml-lg-0 ml-md-0 ml-xl-0">Add Drive Details Form</h1>
+            </div>
+        </div>
+    </div>
+
+    <form name="productForm" #requestForm="ngForm">
+        <div class="row ml-0 mr-0">
+            <div class="grey-panel  col-lg-12  ">
+
+                <div class="row mx-0 bg-white mb-2 px-2 py-3 border">
+
+                    <!-- select dropdown for studen -->
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0">
+                            <label>Select Student <span class="redDanger"> * </span>
+                            </label>
+                            <select class="form-control" [(ngModel)]="placement.studentId" name="selectedStudent"
+                                #selectedStudent="ngModel"
+                                [ngClass]="{ 'is-invalid': selectedStudent.errors && selectedStudent.touched }"
+                                required>
+                                <option hidden [value]="undefined" selected>Select a Student</option>
+                                <option *ngFor="let item of studentList" [value]="item.id">
+                                    <p class="mt-2"> {{item.rollNumber}} : {{item.firstName}}</p>
+                                </option>
+                            </select>
+                            <div *ngIf="selectedStudent.touched && selectedStudent.errors">
+                                <div *ngIf="selectedStudent.errors?.required" class="error-msg">
+                                    Student Id is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--  -->
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0">
+                            <label>Select Drive Details <span class="redDanger"> * </span>
+                            </label>
+                            <select class="form-control" [(ngModel)]="placement.driveId" name="selectedStudent"
+                                #selectedDrive="ngModel"
+                                [ngClass]="{ 'is-invalid': selectedDrive.errors && selectedDrive.touched }" required>
+                                <option hidden [value]="undefined" selected>Select a Drive</option>
+                                <option *ngFor="let item of driveList" [value]="item.driveId">
+                                    {{item.driveId}} : {{item.companyId}} : {{item.driveLocation}}
+                                </option>
+                            </select>
+                            <div *ngIf="selectedDrive.touched && selectedDrive.errors">
+                                <div *ngIf="selectedDrive.errors?.required" class="error-msg">
+                                    Drive Details are required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Offered CTC <span class="redLabel">*</span></label>
+                            <input type="number" class="form-control " value="" placeholder="Enter Offered CTC"
+                                [(ngModel)]="placement.offeredCtc " name="CTC"
+                                [ngClass]="{ 'is-invalid': CTC.errors && CTC.touched }" #CTC="ngModel" required>
+                            <div *ngIf="CTC.touched && CTC.errors">
+                                <div class="error-msg" *ngIf="CTC.errors?.required">
+                                    Offered CTC is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--  -->
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0">
+                            <label> Offer Acceptance status <span class="redDanger"> * </span>
+                            </label>
+                            <select class="form-control" [(ngModel)]="placement.hasAccepted" name="isOfferSelected"
+                                #isOfferSelected="ngModel"
+                                [ngClass]="{ 'is-invalid': isOfferSelected.errors && isOfferSelected.touched }"
+                                required>
+                                <option hidden [value]="undefined" selected>Select a Acceptance</option>
+                                <option value="Y">Yes
+                                </option>
+                                <option value="N">No
+                                </option>
+                            </select>
+                            <div *ngIf="isOfferSelected.touched && isOfferSelected.errors">
+                                <div *ngIf="isOfferSelected.errors?.required" class="error-msg">
+                                    Acceptance status are required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Offer Release Date<span class="redLabel"> *</span></label>
+                            <input type="date" class="form-control " value="" placeholder="Enter Offer Release Date "
+                                [(ngModel)]="placement.offerReleaseDate" name="ReleaseDate"
+                                [ngClass]="{ 'is-invalid': ReleaseDate.errors && ReleaseDate.touched }"
+                                #ReleaseDate="ngModel" required>
+                            <div *ngIf="ReleaseDate.touched && ReleaseDate.errors">
+                                <div class="error-msg" *ngIf="ReleaseDate.errors?.required">
+                                    Offer Release Date is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Date Of Joining<span class="redLabel"> *</span></label>
+                            <input type="date" class="form-control " value="" placeholder="Enter Date Of Joining "
+                                [(ngModel)]="placement.dateOfJoining" name="JoiningDate"
+                                [ngClass]="{ 'is-invalid': JoiningDate.errors && JoiningDate.touched }"
+                                #JoiningDate="ngModel" required>
+                            <div *ngIf="JoiningDate.touched && JoiningDate.errors">
+                                <div class="error-msg" *ngIf="JoiningDate.errors?.required">
+                                    Date Of Joining is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row ml-0 mr-0 e">
+                    <div class="col-12 col-md-12 ml-md-auto text-md-right text-right pt-4 pb-4">
+
+                        <button class=" btn btn-primary" (click)="submitRequest()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+</div>

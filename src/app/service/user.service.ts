@@ -26,20 +26,20 @@ export class UserService {
   userLogin(userLogin: UserLogin): Observable<string>|Observable<any>{
     const url= this.userUrl+"/login";
 
-    return this.http.post(url,userLogin, {responseType: 'text'}).pipe(
-      tap(data => console.log("Response : "+data)),
-      catchError(this.handleError)
-    );
- //   let temp = this.users.filter(user => user.username===userLogin.username && user.password===userLogin.password)[0];
+    // return this.http.post(url,userLogin, {responseType: 'text'}).pipe(
+    //   tap(data => console.log("Response : "+data)),
+    //   catchError(this.handleError)
+    // );
+   let temp = this.users.filter(user => user.username===userLogin.username && user.password===userLogin.password)[0];
     
-    // if(temp==undefined){
-    //   return throwError(()=> new Error("Invalid username or password"));
-    // }
-    // return Observable.create(observer => {
-    //   observer.next(temp);
-    //   //call complete if you want to close this stream (like a promise)
-    //   observer.complete();
-    // });
+    if(temp==undefined){
+      return throwError(()=> new Error("Invalid username or password"));
+    }
+    return Observable.create(observer => {
+      observer.next(temp);
+      //call complete if you want to close this stream (like a promise)
+      observer.complete();
+    });
   }
   
   // Error handler 

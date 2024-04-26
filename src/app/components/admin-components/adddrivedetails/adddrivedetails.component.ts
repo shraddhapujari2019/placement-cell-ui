@@ -13,11 +13,21 @@ export class AdddrivedetailsComponent implements OnInit {
   drive = new Drive();
 
   @ViewChild('requestForm') public requestForm: NgForm;
-companyId: any;
-ID: any;
+  companyId: any;
+  ID: any;
+  companyList:any;
+
   constructor(private adminService: AdminService, private router: Router) { }
 
   ngOnInit(): void {
+  
+    this.getCompanyList();
+  }
+
+  getCompanyList() {
+    this.adminService.fetchCompanyList().subscribe(res => {
+      this.companyList=res
+    })
   }
 
   submitRequest() {
@@ -62,5 +72,5 @@ export class Drive {
   activeBacklogStatus: string
   maxActiveBacklogAllowed: number
   historicalBacklogStatus: string
-  maxHistBacklogAllowed : number
+  maxHistBacklogAllowed: number
 }

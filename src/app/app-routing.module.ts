@@ -76,17 +76,20 @@ const routes: Routes = [
 
       {
         path: 'add-company-details',
-        component: AddcompanydetailsComponent
+        component: AddcompanydetailsComponent,
+        data:{tab:'company'}
       },
 
       {
         path: 'add-drive-details',
-        component: AdddrivedetailsComponent
+        component: AdddrivedetailsComponent,
+        data:{tab:'drive'}
       },
 
       {
         path: 'add-placement-details',
-        component: AddplacedStudentsComponent
+        component: AddplacedStudentsComponent,
+        data:{tab:'placement'}
       }
 
     ],

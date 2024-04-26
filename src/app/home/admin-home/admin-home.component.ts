@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'admin-home',
   templateUrl: './admin-home.component.html',
@@ -10,11 +10,28 @@ export class AdminHomeComponent implements OnInit {
   userId: string;
   role: string;
   selectedTab: string;
-  constructor(private router: Router) { }
+  constructor(private router: Router, private activeatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.userId = localStorage.getItem("userId");
     this.role = localStorage.getItem("role");
+
+    this.preSelectMenu();
+  }
+
+  preSelectMenu() {
+
+    if (window.location.href.includes('/add-company-details')) {
+      this.selectedTab = "company"
+    } else if (window.location.href.includes('/add-drive-details')) {
+      this.selectedTab = "drive"
+
+    } else if (window.location.href.includes('/add-placement-details')) {
+      this.selectedTab = "placement"
+
+    } else {
+      this.selectedTab = "";
+    }
   }
 
   logout() {
@@ -45,5 +62,9 @@ export class AdminHomeComponent implements OnInit {
       default: this.router.navigate[''];
 
     }
+  }
+
+  ngDestory(){
+    this.selectedTab="";
   }
 }

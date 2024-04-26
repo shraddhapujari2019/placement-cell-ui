@@ -1,0 +1,65 @@
+<div class="col-12 col-lg-4 col-md-3 mb-2">
+    <div class="form-group mr-1 p-0 mb-0">
+        <label>Select Drive Details <span class="redDanger"> * </span>
+        </label>
+        <select class="form-control" [(ngModel)]="placement.driveId" name="selectedStudent" #selectedDrive="ngModel"
+            [ngClass]="{ 'is-invalid': selectedDrive.errors && selectedDrive.touched }" required>
+            <option hidden [value]="undefined" selected>Select a Drive Details</option>
+            <option *ngFor="let item of driveList" [ngValue]="placement.driveId">
+                {{value.driveId}} : {{value.companyId}} : {{value.driveLocation}}
+            </option>
+        </select>
+        <div *ngIf="selectedDrive.touched && selectedDrive.errors">
+            <div *ngIf="selectedDrive.errors?.required" class="error-msg">
+                Drive Details are required
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+
+
+<div class="col-12 col-lg-4 col-md-3 mb-2">
+    <div class="form-group mr-1 p-0 mb-0">
+        <label> Offer Acceptance status <span class="redDanger"> * </span>
+        </label>
+        <select class="form-control" [(ngModel)]="placement.hasAccepted" name="isOfferSelected"
+            #isOfferSelected="ngModel" [ngClass]="{ 'is-invalid': isOfferSelected.errors && isOfferSelected.touched }"
+            required>
+            <option hidden [value]="undefined" selected>Select a Acceptance</option>
+            <option [value]="Y">Yes
+            </option>
+            <option [value]="N">No
+            </option>
+        </select>
+        <div *ngIf="isOfferSelected.touched && isOfferSelected.errors">
+            <div *ngIf="isOfferSelected.errors?.required" class="error-msg">
+                Acceptance status are required
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  -->
+
+
+<div class="col-12 col-lg-4 col-md-3 mb-2">
+    <div class="form-group mr-1 p-0 mb-0">
+        <label> Select Company Name <span class="redDanger"> * </span>
+        </label>
+        <select class="form-control" [(ngModel)]="drive.companyId" name="isOfferSelected"
+            #company="ngModel" [ngClass]="{ 'is-invalid': company.errors && company.touched }"
+            required>
+            <option hidden [value]="undefined" selected>Select a Company Details</option>
+            <option *ngFor="let item of compnayList" [ngValue]="item.companyId">
+                {{value.companyId}} : {{value.companyName}}
+            </option>
+        </select>
+        <div *ngIf="company.touched && company.errors">
+            <div *ngIf="company.errors?.required" class="error-msg">
+                Company selection is required
+            </div>
+        </div>
+    </div>
+</div>
