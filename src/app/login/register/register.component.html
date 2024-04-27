@@ -1,0 +1,61 @@
+<div class="center-box" style="height: 40%; width: 20%; margin: 11%40%">
+    <h1>Student Registration</h1>
+    <hr />
+    <form [formGroup]="registerForm" (ngSubmit)="registerStudent()">
+      <div class="mb-3">
+        <label for="userId" class="form-label">username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userId"
+          formControlName="userId"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            registerForm.controls.userId.invalid && registerForm.controls.userId.dirty
+          "
+        >
+          please enter a valid user username.
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label for="password" class="form-label">password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            registerForm.controls.password.invalid &&
+            registerForm.controls.password.dirty
+          "
+        >
+          please enter a valid password.
+        </div>
+      </div>
+  
+      <button
+        [disabled]="registerForm.invalid"
+        type="submit"
+        class="btn btn-primary"
+      >
+        Register
+      </button>
+      <div *ngIf="errorMessage" class="text-danger">
+        {{ errorMessage }}
+      </div>
+      <div *ngIf="successMessage" class="text-success">
+        {{ successMessage }}
+      </div>
+    </form>
+    <p class="text-center">
+      <a [routerLink]="['/login']">Go to Login</a>
+    </p>
+    <hr />
+  </div>
+  

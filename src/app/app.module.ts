@@ -22,6 +22,7 @@ import { CheckResultsComponent } from './components/student-components/check-res
 import { DriveDetailsComponent } from './details/drive-details/drive-details.component';
 import { StudentDetailsComponent } from './details/student-details/student-details.component';
 import { CompanyDetailsComponent } from './details/company-details/company-details.component';
+import { RegisterComponent } from './login/register/register.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CompanyDetailsComponent } from './details/company-details/company-detai
     CheckResultsComponent,
     DriveDetailsComponent,
     StudentDetailsComponent,
-    CompanyDetailsComponent
+    CompanyDetailsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
