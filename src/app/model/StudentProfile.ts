@@ -30,10 +30,11 @@ export class StudentProfile{
     gap: String;    
     gapStartDate: Date;    
     gapEndDate: String;    
-    sem1Marks: number;    
-    sem2Marks: number;    
-    sem3Marks: number;    
-    sem4Marks: number;    
+    sem1Sgpa: number;    
+    sem2Sgpa: number;    
+    sem3Sgpa: number;    
+    sem4Sgpa: number;
+    aggCgpa: number;   
     activeBacklog: String;    
     totalBacklog: String;    
     experience: String;    
