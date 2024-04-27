@@ -34,21 +34,21 @@ export class AdddrivedetailsComponent implements OnInit {
     if (this.requestForm.valid) {
       console.log("Form Data : \n\n" + JSON.stringify(this.drive));
 
-      const payload = {
-        companyId: this.drive.companyId,
-        driveDate: this.drive.driveDate,
-        driveLocation: this.drive.driveLocation,
-        offeredCtc: this.drive.offeredCtc,
-        sscMarks: this.drive.sscMarks,
-        hscMarks: this.drive.hscMarks,
-        graduationMarks: this.drive.graduationMarks,
-        activeBacklogStatus: this.drive.activeBacklogStatus,
-        maxActiveBacklogAllowed: this.drive.maxActiveBacklogAllowed,
-        historicalBacklogStatus: this.drive.historicalBacklogStatus,
-        maxHistBacklogAllowed: this.drive.maxHistBacklogAllowed
-      }
+      // const payload = {
+      //   companyId: this.drive.companyId,
+      //   driveDate: this.drive.driveDate,
+      //   driveLocation: this.drive.driveLocation,
+      //   offeredCtc: this.drive.offeredCtc,
+      //   sscMarks: this.drive.sscMarks,
+      //   hscMarks: this.drive.hscMarks,
+      //   graduationMarks: this.drive.graduationMarks,
+      //   isActiveBacklogAllowed: this.drive.isActiveBacklogAllowed,
+      //   maxActiveBacklogAllowed: this.drive.maxActiveBacklogAllowed,
+      //   isTotalBacklogAllowed: this.drive.isTotalBacklogAllowed,
+      //   maxTotalBacklogAllowed: this.drive.maxTotalBacklogAllowed
+      // }
 
-      this.adminService.submitAddDriveRequest(payload).subscribe(res => {
+      this.adminService.submitAddDriveRequest(this.drive).subscribe(res => {
         alert("Request Submitted Successfully");
 
         this.router.navigate(['/adminhome']);
@@ -69,8 +69,8 @@ export class Drive {
   sscMarks: number
   hscMarks: number
   graduationMarks: number
-  activeBacklogStatus: string
+  isActiveBacklogAllowed: string
   maxActiveBacklogAllowed: number
-  historicalBacklogStatus: string
-  maxHistBacklogAllowed: number
+  isTotalBacklogAllowed: string
+  maxTotalBacklogAllowed: number
 }
