@@ -14,6 +14,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ApplyComponent } from './components/student-components/apply/apply.component';
 import { UpcomingdrivesComponent } from './components/student-components/upcomingDrives/upcomingdrives.component';
 import { CheckResultsComponent } from './components/student-components/check-results/check-results.component';
+import { RegisterComponent } from './login/register/register.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: "login",
     component: UserLoginComponent
+  },
+  {
+    path: "register",
+    component: RegisterComponent
   },
   {
     path: "adminlogin",
