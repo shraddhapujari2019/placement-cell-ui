@@ -1,1 +1,12 @@
 <p>profile works!</p>
+
+
+<div *ngIf="studentProfile!=undefined && studentProfile!=null">
+    <p>Student Name: {{studentProfile.firstName}} {{studentProfile.middleName}} {{studentProfile.lastName}}</p>
+    <p>Student Roll No.: {{studentProfile.rollNumber}}</p>
+    <p>Student DoB: {{studentProfile.dateOfBirth}}</p>
+</div>
+
+<div *ngIf="errorMessage!=undefined && errorMessage!=null">
+    <p>Error: {{errorMessage}}</p>
+</div>

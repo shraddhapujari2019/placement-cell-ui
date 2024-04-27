@@ -24,20 +24,20 @@ export class AdminService {
 
   adminLogin(userLogin: UserLogin):Observable<Message>|Observable<any>{
     const url= this.userUrl+"/admin-login";
-    // return this.http.post(url,userLogin, {responseType: 'text'}).pipe(
-    //   tap(data => console.log("Response : "+data)),
-    //   catchError(this.handleError)
-    // );  
-    let temp = this.users.filter(user => user.username===userLogin.username && user.password===userLogin.password)[0];
+    return this.http.post(url,userLogin, {responseType: 'text'}).pipe(
+      tap(data => console.log("Response : "+data)),
+      catchError(this.handleError)
+    );  
+    // let temp = this.users.filter(user => user.username===userLogin.username && user.password===userLogin.password)[0];
     
-    if(temp==undefined){
-      return throwError("Invalid username or password");
-    }
-    return Observable.create(observer => {
-      observer.next(temp);
-      //call complete if you want to close this stream (like a promise)
-      observer.complete();
-    });  
+    // if(temp==undefined){
+    //   return throwError("Invalid username or password");
+    // }
+    // return Observable.create(observer => {
+    //   observer.next(temp);
+    //   //call complete if you want to close this stream (like a promise)
+    //   observer.complete();
+    // });  
   }
 
   private handleError(err: HttpErrorResponse) {
