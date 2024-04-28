@@ -1,0 +1,664 @@
+<div class="px-3">
+
+    <div class="px-3 pt-1 pb-2">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="PageHeader3 w-100  ml-2 ml-lg-0 ml-md-0 ml-xl-0">Create profile</h1>
+            </div>
+        </div>
+    </div>
+
+    <form name="profileForm" #profileForm="ngForm">
+        <div class="row ml-0 mr-0">
+            <div class="grey-panel  col-lg-12  ">
+                <div class="row mx-0 bg-white mb-2 px-2 py-3 border">
+                    <!-- Personal Info -->
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">First Name <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter First Name"
+                                [(ngModel)]="studentProfile.firstName" name="firstName"
+                                [ngClass]="{ 'is-invalid': firstName.errors && firstName.touched }" #firstName="ngModel" required>
+                            <div *ngIf="firstName.touched && firstName.errors">
+                                <div class="error-msg" *ngIf="firstName.errors?.required">
+                                    First Name is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Middle Name <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Middle Name"
+                                [(ngModel)]="studentProfile.middleName" name="middleName"
+                                [ngClass]="{ 'is-invalid': middleName.errors && middleName.touched }" #middleName="ngModel">
+                            <div *ngIf="middleName.touched && middleName.errors">
+                                Middle Name is invalid<br>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Last Name <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Last Name"
+                                [(ngModel)]="studentProfile.lastName" name="lastName"
+                                [ngClass]="{ 'is-invalid': lastName.errors && lastName.touched }" #lastName="ngModel" required>
+                            <div *ngIf="lastName.touched && lastName.errors">
+                                <div class="error-msg" *ngIf="lastName.errors?.required">
+                                    Last Name is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Roll Number <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Roll Number"
+                                [(ngModel)]="studentProfile.rollNumber" name="rollNumber"
+                                [ngClass]="{ 'is-invalid': rollNumber.errors && rollNumber.touched }" #rollNumber="ngModel" required>
+                            <div *ngIf="rollNumber.touched && rollNumber.errors">
+                                <div class="error-msg" *ngIf="rollNumber.errors?.required">
+                                    Roll Number is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Date of Birth Date <span class="redLabel">*</span></label>
+                            <input type="date" class="form-control " value="" placeholder="Enter Date of Birth"
+                                [(ngModel)]="studentProfile.dateOfBirth" name="dateOfBirth"
+                                [ngClass]="{ 'is-invalid': dateOfBirth.errors && dateOfBirth.touched }" #dateOfBirth="ngModel" required>
+                            <div *ngIf="dateOfBirth.touched && dateOfBirth.errors">
+                                <div class="error-msg" *ngIf="dateOfBirth.errors?.required">
+                                    Date of birth is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Gender<span class="redLabel">*</span></label>
+                            
+                            <div class="form-control-radio">
+                            <input type="radio" value="Male"
+                                [(ngModel)]="studentProfile.gender" name="gender"
+                                [ngClass]="{ 'is-invalid': gender.errors && gender.touched }" #gender="ngModel" required>
+                            <span> Male </span>
+                            
+                            <input type="radio" value="Female"
+                                [(ngModel)]="studentProfile.gender" name="gender"
+                                [ngClass]="{ 'is-invalid': gender.errors && gender.touched }" #gender="ngModel" required>
+                            <span> Female </span>    
+
+                            <input type="radio" value="Other"
+                            [(ngModel)]="studentProfile.gender" name="gender"
+                            [ngClass]="{ 'is-invalid': gender.errors && gender.touched }" #gender="ngModel" required>
+                            <span> Other </span>
+                             </div>    
+
+                            <div *ngIf="gender.touched && gender.errors">
+                                <div class="error-msg" *ngIf="gender.errors?.required">
+                                    Gender is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Mobile Number Name <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Mobile Number"
+                                [(ngModel)]="studentProfile.mobileNumber" name="mobileNumber"
+                                [ngClass]="{ 'is-invalid': mobileNumber.errors && mobileNumber.touched }" #mobileNumber="ngModel" required>
+                            <div *ngIf="mobileNumber.touched && mobileNumber.errors">
+                                <div class="error-msg" *ngIf="mobileNumber.errors?.required">
+                                    Mobile Number is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Email Name <span class="redLabel">*</span></label>
+                            <input type="email" class="form-control " value="" placeholder="Enter Email"
+                                [(ngModel)]="studentProfile.email" name="email"
+                                [ngClass]="{ 'is-invalid': email.errors && email.touched }" #email="ngModel" required>
+                            <div *ngIf="email.touched && email.errors">
+                                <div class="error-msg" *ngIf="email.errors?.required">
+                                    Email is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Current Address <span class="redLabel">*</span></label>
+                            <textarea class="form-control " value="" placeholder="Enter Current Address"
+                                [(ngModel)]="studentProfile.currentAddress" name="currentAddress"
+                                [ngClass]="{ 'is-invalid': currentAddress.errors && currentAddress.touched }" #currentAddress="ngModel" required>
+                            </textarea>
+                            <div *ngIf="currentAddress.touched && currentAddress.errors">
+                                <div class="error-msg" *ngIf="currentAddress.errors?.required">
+                                    Current Address is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Permanent Address <span class="redLabel">*</span></label>
+                            <textarea class="form-control " value="" placeholder="Enter Permanent Address"
+                                [(ngModel)]="studentProfile.permanentAddress" name="permanentAddress"
+                                [ngClass]="{ 'is-invalid': permanentAddress.errors && permanentAddress.touched }" #permanentAddress="ngModel" required>
+                            </textarea>
+                            <div *ngIf="permanentAddress.touched && permanentAddress.errors">
+                                <div class="error-msg" *ngIf="permanentAddress.errors?.required">
+                                    Permanent Address is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Educational details -->
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Course <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Course Name"
+                                [(ngModel)]="studentProfile.course" name="course"
+                                [ngClass]="{ 'is-invalid': course.errors && course.touched }" #course="ngModel" required>
+                            <div *ngIf="course.touched && course.errors">
+                                <div class="error-msg" *ngIf="course.errors?.required">
+                                    Course is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Admission Year <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Admission Year"
+                                [(ngModel)]="studentProfile.admissionYear" name="admissionYear"
+                                [ngClass]="{ 'is-invalid': admissionYear.errors && admissionYear.touched }" #admissionYear="ngModel" required>
+                            <div *ngIf="admissionYear.touched && admissionYear.errors">
+                                <div class="error-msg" *ngIf="admissionYear.errors?.required">
+                                    Admission Year is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Passing Year <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Passing Year"
+                                [(ngModel)]="studentProfile.passingYear" name="passingYear"
+                                [ngClass]="{ 'is-invalid': passingYear.errors && passingYear.touched }" #passingYear="ngModel" required>
+                            <div *ngIf="passingYear.touched && passingYear.errors">
+                                <div class="error-msg" *ngIf="passingYear.errors?.required">
+                                    Passing Year is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0">
+                            <label>Semester<span class="redDanger"> * </span>
+                            </label>
+                            <select class="form-control" [(ngModel)]="studentProfile.semester" name="semester"
+                                #semester="ngModel"
+                                [ngClass]="{ 'is-invalid': semester.errors && semester.touched }">
+                                <option hidden [value]="undefined" selected>Select Semester</option>
+                                <option value="1">1 
+                                </option>
+                                <option value="2">2
+                                </option>
+                                <option value="3">3 
+                                </option>
+                                <option value="4">4 
+                                </option>
+                            </select>
+                            <div *ngIf="semester.touched && semester.errors">
+                                <div *ngIf="semester.errors?.required" class="error-msg">
+                                    Semester Status is required
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Division <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Division"
+                                [(ngModel)]="studentProfile.division" name="division"
+                                [ngClass]="{ 'is-invalid': division.errors && division.touched }" #division="ngModel" required>
+                            <div *ngIf="division.touched && division.errors">
+                                <div class="error-msg" *ngIf="division.errors?.required">
+                                    Division is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">College Name <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter College Name"
+                                [(ngModel)]="studentProfile.collegeName" name="collegeName"
+                                [ngClass]="{ 'is-invalid': collegeName.errors && collegeName.touched }" #collegeName="ngModel" required>
+                            <div *ngIf="collegeName.touched && collegeName.errors">
+                                <div class="error-msg" *ngIf="collegeName.errors?.required">
+                                    College Name is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">SSC Passing Year <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter SSC Passing Year "
+                                [(ngModel)]="studentProfile.sscPassingYear" name="sscPassingYear"
+                                [ngClass]="{ 'is-invalid': sscPassingYear.errors && sscPassingYear.touched }" #sscPassingYear="ngModel" required>
+                            <div *ngIf="sscPassingYear.touched && sscPassingYear.errors">
+                                <div class="error-msg" *ngIf="sscPassingYear.errors?.required">
+                                    SSC Passing Year  is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">SSC Marks <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter SSC Marks "
+                                [(ngModel)]="studentProfile.sscMarks" name="sscMarks"
+                                [ngClass]="{ 'is-invalid': sscMarks.errors && sscMarks.touched }" #sscMarks="ngModel" required>
+                            <div *ngIf="sscMarks.touched && sscMarks.errors">
+                                <div class="error-msg" *ngIf="sscMarks.errors?.required">
+                                    SSC Marks is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">HSC Passing Year <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter HSC Passing Year "
+                                [(ngModel)]="studentProfile.hscPassingYear" name="hscPassingYear"
+                                [ngClass]="{ 'is-invalid': hscPassingYear.errors && hscPassingYear.touched }" #hscPassingYear="ngModel" required>
+                            <div *ngIf="hscPassingYear.touched && hscPassingYear.errors">
+                                <div class="error-msg" *ngIf="hscPassingYear.errors?.required">
+                                    HSC Passing Year  is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">HSC Marks <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter HSC Marks "
+                                [(ngModel)]="studentProfile.hscMarks" name="hscMarks"
+                                [ngClass]="{ 'is-invalid': hscMarks.errors && hscMarks.touched }" #hscMarks="ngModel" required>
+                            <div *ngIf="hscMarks.touched && hscMarks.errors">
+                                <div class="error-msg" *ngIf="hscMarks.errors?.required">
+                                    HSC Marks is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Highest Qualification<span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Highest Qualification"
+                                [(ngModel)]="studentProfile.highestQualificationName" name="highestQualificationName"
+                                [ngClass]="{ 'is-invalid': highestQualificationName.errors && highestQualificationName.touched }" #highestQualificationName="ngModel" required>
+                            <div *ngIf="highestQualificationName.touched && highestQualificationName.errors">
+                                <div class="error-msg" *ngIf="highestQualificationName.errors?.required">
+                                    Highest Qualification is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Highest Qualification Passing Year<span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Highest Qualification Passing Year"
+                                [(ngModel)]="studentProfile.highestQualificationPassingYear" name="highestQualificationPassingYear"
+                                [ngClass]="{ 'is-invalid': highestQualificationPassingYear.errors && highestQualificationPassingYear.touched }" #highestQualificationPassingYear="ngModel" required>
+                            <div *ngIf="highestQualificationPassingYear.touched && highestQualificationPassingYear.errors">
+                                <div class="error-msg" *ngIf="highestQualificationPassingYear.errors?.required">
+                                    Highest Qualification Passing Year is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Highest Qualification Marks<span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Highest Qualification Marks"
+                                [(ngModel)]="studentProfile.highestQualificationMarks" name="highestQualificationMarks"
+                                [ngClass]="{ 'is-invalid': highestQualificationMarks.errors && highestQualificationMarks.touched }" #highestQualificationMarks="ngModel" required>
+                            <div *ngIf="highestQualificationMarks.touched && highestQualificationMarks.errors">
+                                <div class="error-msg" *ngIf="highestQualificationMarks.errors?.required">
+                                    Highest Qualification Marks is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Other Graduation<span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Other Graduation"
+                                [(ngModel)]="studentProfile.otherGraduationName" name="otherGraduationName"
+                                [ngClass]="{ 'is-invalid': otherGraduationName.errors && otherGraduationName.touched }" #otherGraduationName="ngModel" >
+                            <div *ngIf="otherGraduationName.touched && otherGraduationName.errors">
+                                <div class="error-msg" *ngIf="otherGraduationName.errors?.required">
+                                    Other Graduation is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Other Graduation Passing Year<span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Other Graduation Passing Year"
+                                [(ngModel)]="studentProfile.otherGraduationPassingYear" name="otherGraduationPassingYear"
+                                [ngClass]="{ 'is-invalid': otherGraduationPassingYear.errors && otherGraduationPassingYear.touched }" #otherGraduationPassingYear="ngModel" >
+                            <div *ngIf="otherGraduationPassingYear.touched && otherGraduationPassingYear.errors">
+                                <div class="error-msg" *ngIf="otherGraduationPassingYear.errors?.required">
+                                    Other Graduation Passing Year is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Other Graduation Marks<span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Other Graduation Marks"
+                                [(ngModel)]="studentProfile.otherGraduationMarks" name="otherGraduationMarks"
+                                [ngClass]="{ 'is-invalid': otherGraduationMarks.errors && otherGraduationMarks.touched }" #otherGraduationMarks="ngModel">
+                            <div *ngIf="otherGraduationMarks.touched && otherGraduationMarks.errors">
+                                <div class="error-msg" *ngIf="otherGraduationMarks.errors?.required">
+                                    Other Graduation Marks is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Gap<span class="redLabel">*</span></label>
+                            
+                            <div class="form-control-radio">
+                            <input type="radio" value="Y"
+                                [(ngModel)]="studentProfile.gap" name="gap"
+                                [ngClass]="{ 'is-invalid': gap.errors && gap.touched }" #gap="ngModel" required>
+                            <span> Y </span>
+                            
+                            <input type="radio" value="N"
+                                [(ngModel)]="studentProfile.gap" name="gap"
+                                [ngClass]="{ 'is-invalid': gap.errors && gap.touched }" #gap="ngModel" required>
+                            <span> N </span>    
+                             </div>    
+
+                            <div *ngIf="gap.touched && gap.errors">
+                                <div class="error-msg" *ngIf="gap.errors?.required">
+                                    Gap is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Gap Start Date <span class="redLabel">*</span></label>
+                            <input type="date" class="form-control " value="" placeholder="Enter Gap Start Date"
+                                [(ngModel)]="studentProfile.gapStartDate" name="gapStartDate"
+                                [ngClass]="{ 'is-invalid': gapStartDate.errors && gapStartDate.touched }" #gapStartDate="ngModel">
+                            <div *ngIf="gapStartDate.touched && gapStartDate.errors">
+                                <div class="error-msg" *ngIf="gapStartDate.errors?.required">
+                                    Gap Start Date is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Gap End Date <span class="redLabel">*</span></label>
+                            <input type="date" class="form-control " value="" placeholder="Enter Gap End Date"
+                                [(ngModel)]="studentProfile.gapEndDate" name="gapEndDate"
+                                [ngClass]="{ 'is-invalid': gapEndDate.errors && gapEndDate.touched }" #gapEndDate="ngModel">
+                            <div *ngIf="gapEndDate.touched && gapEndDate.errors">
+                                <div class="error-msg" *ngIf="gapEndDate.errors?.required">
+                                    Gap End Date is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Sem 1 SGPA <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Sem 1 SGPA "
+                                [(ngModel)]="studentProfile.sem1Sgpa" name="sem1Sgpa"
+                                [ngClass]="{ 'is-invalid': sem1Sgpa.errors && sem1Sgpa.touched }" #sem1Sgpa="ngModel" required>
+                            <div *ngIf="sem1Sgpa.touched && sem1Sgpa.errors">
+                                <div class="error-msg" *ngIf="sem1Sgpa.errors?.required">
+                                    Sem 1 SGPA is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Sem 2 SGPA <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Sem 2 SGPA "
+                                [(ngModel)]="studentProfile.sem2Sgpa" name="sem2Sgpa"
+                                [ngClass]="{ 'is-invalid': sem2Sgpa.errors && sem2Sgpa.touched }" #sem2Sgpa="ngModel" required>
+                            <div *ngIf="sem2Sgpa.touched && sem2Sgpa.errors">
+                                <div class="error-msg" *ngIf="sem2Sgpa.errors?.required">
+                                    Sem 2 SGPA is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Sem 3 SGPA <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Sem 3 SGPA "
+                                [(ngModel)]="studentProfile.sem3Sgpa" name="sem3Sgpa"
+                                [ngClass]="{ 'is-invalid': sem3Sgpa.errors && sem3Sgpa.touched }" #sem3Sgpa="ngModel" required>
+                            <div *ngIf="sem3Sgpa.touched && sem3Sgpa.errors">
+                                <div class="error-msg" *ngIf="sem3Sgpa.errors?.required">
+                                    Sem 3 SGPA is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Sem 4 SGPA <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Sem 4 SGPA "
+                                [(ngModel)]="studentProfile.sem4Sgpa" name="sem4Sgpa"
+                                [ngClass]="{ 'is-invalid': sem4Sgpa.errors && sem4Sgpa.touched }" #sem4Sgpa="ngModel" required>
+                            <div *ngIf="sem4Sgpa.touched && sem4Sgpa.errors">
+                                <div class="error-msg" *ngIf="sem4Sgpa.errors?.required">
+                                    Sem 4 SGPA is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Aggregate CGPA <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Aggregate CGPA "
+                                [(ngModel)]="studentProfile.aggCgpa" name="aggCgpa"
+                                [ngClass]="{ 'is-invalid': aggCgpa.errors && aggCgpa.touched }" #aggCgpa="ngModel" required>
+                            <div *ngIf="aggCgpa.touched && aggCgpa.errors">
+                                <div class="error-msg" *ngIf="aggCgpa.errors?.required">
+                                    Aggregate CGPA is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown to select if Active backlogs are allowed or not -->
+                    <!-- <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0">
+                            <label>Active Backlog<span class="redDanger"> * </span>
+                            </label>
+                            <select class="form-control" [(ngModel)]="studentProfile.activeBacklog" name="activeBacklog"
+                                #activeBacklog="ngModel"
+                                [ngClass]="{ 'is-invalid': activeBacklog.errors && activeBacklog.touched }">
+                                <option hidden [value]="undefined" selected>Select Backlogs</option>
+                                <option value="Y">Yes
+                                </option>
+                                <option value="N">No
+                                </option>
+                            </select>
+                            <div *ngIf="activeBacklog.touched && activeBacklog.errors">
+                                <div *ngIf="activeBacklog.errors?.required" class="error-msg">
+                                    activeBacklog Status is required
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Active Backlogs <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Active Backlogs "
+                                [(ngModel)]="studentProfile.activeBacklog" name="activeBacklog"
+                                [ngClass]="{ 'is-invalid': activeBacklog.errors && activeBacklog.touched }" #activeBacklog="ngModel">
+                            <div *ngIf="activeBacklog.touched && activeBacklog.errors">
+                                <div class="error-msg" *ngIf="activeBacklog.errors?.required">
+                                    Active Backlogs is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Total Backlogs <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Total Backlogs "
+                                [(ngModel)]="studentProfile.totalBacklog" name="totalBacklog"
+                                [ngClass]="{ 'is-invalid': totalBacklog.errors && totalBacklog.touched }" #totalBacklog="ngModel">
+                            <div *ngIf="totalBacklog.touched && totalBacklog.errors">
+                                <div class="error-msg" *ngIf="totalBacklog.errors?.required">
+                                    Total Backlogs is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Experience <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Experience "
+                                [(ngModel)]="studentProfile.experience" name="experience"
+                                [ngClass]="{ 'is-invalid': experience.errors && experience.touched }" #experience="ngModel">
+                            <div *ngIf="experience.touched && experience.errors">
+                                <div class="error-msg" *ngIf="experience.errors?.required">
+                                    Experience is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Experience Start Date <span class="redLabel">*</span></label>
+                            <input type="date" class="form-control " value="" placeholder="Enter Experience Start Date"
+                                [(ngModel)]="studentProfile.experienceStartDate" name="experienceStartDate"
+                                [ngClass]="{ 'is-invalid': experienceStartDate.errors && experienceStartDate.touched }" #experienceStartDate="ngModel">
+                            <div *ngIf="experienceStartDate.touched && experienceStartDate.errors">
+                                <div class="error-msg" *ngIf="experienceStartDate.errors?.required">
+                                    Experience Start Date is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Experience End Date <span class="redLabel">*</span></label>
+                            <input type="date" class="form-control " value="" placeholder="Enter Experience End Date"
+                                [(ngModel)]="studentProfile.experienceEndDate" name="experienceEndDate"
+                                [ngClass]="{ 'is-invalid': experienceEndDate.errors && experienceEndDate.touched }" #experienceEndDate="ngModel">
+                            <div *ngIf="experienceEndDate.touched && experienceEndDate.errors">
+                                <div class="error-msg" *ngIf="experienceEndDate.errors?.required">
+                                    Experience End Date is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Company <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Company Name "
+                                [(ngModel)]="studentProfile.companyName" name="companyName"
+                                [ngClass]="{ 'is-invalid': companyName.errors && companyName.touched }" #companyName="ngModel">
+                            <div *ngIf="companyName.touched && companyName.errors">
+                                <div class="error-msg" *ngIf="companyName.errors?.required">
+                                    Company Name is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Position <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Position"
+                                [(ngModel)]="studentProfile.position" name="position"
+                                [ngClass]="{ 'is-invalid': position.errors && position.touched }" #position="ngModel">
+                            <div *ngIf="position.touched && position.errors">
+                                <div class="error-msg" *ngIf="position.errors?.required">
+                                    Position Name is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-3 mb-2">
+                        <div class="form-group mr-1 p-0 mb-0 ">
+                            <label class="pt-1">Role <span class="redLabel">*</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Role"
+                                [(ngModel)]="studentProfile.role" name="role"
+                                [ngClass]="{ 'is-invalid': role.errors && role.touched }" #role="ngModel">
+                            <div *ngIf="role.touched && role.errors">
+                                <div class="error-msg" *ngIf="role.errors?.required">
+                                    Role Name is required<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ml-0 mr-0 e">
+                    <div class="col-12 col-md-12 ml-md-auto text-md-right text-right pt-4 pb-4">
+
+                        <button class=" btn btn-primary" (click)="submitRequest()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

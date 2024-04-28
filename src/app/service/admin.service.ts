@@ -5,13 +5,12 @@ import { Observable } from 'rxjs/internal/Observable';
 import { catchError } from 'rxjs/internal/operators/catchError';
 import { UserLogin } from '../model/UserLogin';
 import { Message } from '../model/Message';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
-
-  userUrl: string = "http://localhost:8089";
   users: UserLogin[] = [];
 
   constructor(
@@ -22,8 +21,12 @@ export class AdminService {
     this.users.push(new UserLogin("admin333", "admin3@123"));
   }
 
+
+  getHostURL(): string {
+    return environment.apiHost;
+  }
   adminLogin(userLogin: UserLogin):Observable<Message>|Observable<any>{
-    const url= this.userUrl+"/admin-login";
+    const url= this.getHostURL()+"/admin-login";
     return this.http.post(url,userLogin, {responseType: 'text'}).pipe(
       tap(data => console.log("Response : "+data)),
       catchError(this.handleError)
@@ -63,27 +66,27 @@ export class AdminService {
   }
 
   submitAddCompanyRequest(payload) {
-    return this.http.post('http://localhost:8089/company/create', payload);
+    return this.http.post(this.getHostURL()+'/company/create', payload);
   }
 
   submitAddDriveRequest(payload) {
-    return this.http.post('http://localhost:8089/drive/create', payload);
+    return this.http.post(this.getHostURL()+'/drive/create', payload);
   }
 
   submitAddPlacementRequest(payload) {
-    return this.http.post('http://localhost:8089/placement-status/create', payload);
+    return this.http.post(this.getHostURL()+'/admin/create-placement-record/', payload);
   }
 
   getStudentlist(){
-    return this.http.get('http://localhost:8089/students/list');
+    return this.http.get(this.getHostURL()+'/students/list');
   }
 
   getDriveList(){
-    return this.http.get('http://localhost:8089/drive/list');
+    return this.http.get(this.getHostURL()+'/drive/list');
 
   }
 
   fetchCompanyList(){
-    return this.http.get("http://localhost:8089/company/list");
+    return this.http.get(this.getHostURL()+"/company/list");
   }
 }

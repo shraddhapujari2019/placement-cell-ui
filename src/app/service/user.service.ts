@@ -6,12 +6,12 @@ import { Observable, throwError } from 'rxjs';
 import { tap,catchError } from "rxjs/operators"
 import { Message } from '../model/Message';
 import { StudentProfile } from '../model/StudentProfile';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  userUrl: string = "http://localhost:8089";
   users: UserLogin[] = [];
   
   constructor(
@@ -22,10 +22,14 @@ export class UserService {
     this.users.push( new UserLogin("student3", "user3@123"));
   }
 
+  getHostURL(): string {
+    return environment.apiHost;
+  }
+  
   //1
   //check if the user is an existing one and with valid password
-  userLogin(userLogin: UserLogin): Observable<string>|Observable<any>{
-    const url= this.userUrl+"/login";
+  userLogin(userLogin: UserLogin): Observable<string>| Observable<any>{
+    const url= this.getHostURL()+"/login";
 
     return this.http.post(url,userLogin, {responseType: 'text'}).pipe(
       tap(data => console.log("Response : "+data)),
@@ -44,7 +48,7 @@ export class UserService {
   }
 
   registerStudent(userLogin: UserLogin): Observable<UserLogin>|Observable<any>{
-    const url= this.userUrl+"/students/create-student"
+    const url= this.getHostURL()+"/students/create-student"
     return this.http.post(url,userLogin).pipe(
          tap(data => console.log("Response : "+data.toString)),
          catchError(this.handleError)
@@ -52,8 +56,16 @@ export class UserService {
   }
 
   fetchStudentProfile(userId: string): Observable<StudentProfile>|Observable<any>{
-    const url= this.userUrl+"/students/student-profile?username="+userId
+    const url= this.getHostURL()+"/students/student-profile?username="+userId
     return this.http.get(url).pipe(
+         tap(data => console.log("Response : "+data.toString)),
+         catchError(this.handleError)
+       );
+  }
+
+  createStudentProfile(studentProfile: StudentProfile): Observable<any>{
+    const url= this.getHostURL()+"/students/create-student-profile"
+    return this.http.post(url, studentProfile).pipe(
          tap(data => console.log("Response : "+data.toString)),
          catchError(this.handleError)
        );

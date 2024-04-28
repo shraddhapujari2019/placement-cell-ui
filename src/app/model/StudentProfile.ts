@@ -29,7 +29,7 @@ export class StudentProfile{
     otherGraduationMarks: number;    
     gap: String;    
     gapStartDate: Date;    
-    gapEndDate: String;    
+    gapEndDate: Date;    
     sem1Sgpa: number;    
     sem2Sgpa: number;    
     sem3Sgpa: number;    

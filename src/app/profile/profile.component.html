@@ -1,6 +1,3 @@
-<p>profile works!</p>
-
-
 <div *ngIf="studentProfile!=undefined && studentProfile!=null">
     <p>Full Name: {{studentProfile.firstName}} {{studentProfile.middleName}} {{studentProfile.lastName}}</p>
     <p>Roll No.: {{studentProfile.rollNumber}}</p>
@@ -45,4 +42,8 @@
 
 <div *ngIf="errorMessage!=undefined && errorMessage!=null">
     <p>Error: {{errorMessage}}</p>
+</div>
+
+<div *ngIf="studentProfile==undefined && studentProfile==null">
+    <app-create-profile></app-create-profile>
 </div>
