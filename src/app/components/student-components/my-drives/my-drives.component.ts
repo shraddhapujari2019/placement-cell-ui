@@ -9,10 +9,11 @@ import { StudentService } from 'src/app/service/student.service';
 export class MyDrivesComponent implements OnInit {
 
   companyList: any;
+  driveList: any;
   constructor(private studentService: StudentService) { }
 
   ngOnInit(): void {
-    this.getDriveList();
+    this.fetchDriveListByStudent();
   }
 
   getDriveList() {
@@ -21,6 +22,15 @@ export class MyDrivesComponent implements OnInit {
 
       // this.companyList=[...this.companyList,...this.companyList, ...this.companyList];
       console.log("***************** \\n\n\n\n", JSON.stringify(res));
+    })
+  }
+
+  fetchDriveListByStudent() {
+    let username = localStorage.getItem("userId");
+    this.studentService.fetchDriveListByStudent(username).subscribe(res => {
+      this.driveList = res;
+
+      console.log("*****************Drives \\n\n\n\n", JSON.stringify(res));
     })
   }
 

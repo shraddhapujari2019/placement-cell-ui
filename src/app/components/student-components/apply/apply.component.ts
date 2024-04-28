@@ -24,8 +24,12 @@ export class ApplyComponent implements OnInit {
     })
   }
 
-  applyNow(companyDetails){
+  applyNow(drive){
     //To do after navigation
-    alert("Applying for Company : => " + companyDetails?.companyId + " at "+companyDetails?.driveLocation);
+    let username = localStorage.getItem("userId");
+    alert("Applying for company : => " + drive?.companyName + " at "+drive?.driveLocation);
+    this.studentService.applyForDrive(username, drive.driveId).subscribe(res => {
+      alert("Applied successfully!");
+    })
   }
 }
