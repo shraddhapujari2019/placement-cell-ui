@@ -17,8 +17,8 @@ import { AdddrivedetailsComponent } from './components/admin-components/adddrive
 import { AddplacedStudentsComponent } from './components/admin-components/addplaced-students/addplaced-students.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ApplyComponent } from './components/student-components/apply/apply.component';
-import { UpcomingdrivesComponent } from './components/student-components/upcomingDrives/upcomingdrives.component';
-import { CheckResultsComponent } from './components/student-components/check-results/check-results.component';
+import { AllCompaniesComponent } from './components/student-components/all-companies/all-companies.component';
+import { MyDrivesComponent } from './components/student-components/my-drives/my-drives.component';
 import { DriveDetailsComponent } from './details/drive-details/drive-details.component';
 import { StudentDetailsComponent } from './details/student-details/student-details.component';
 import { CompanyDetailsComponent } from './details/company-details/company-details.component';
@@ -38,8 +38,8 @@ import { CreateProfileComponent } from './create-profile/create-profile.componen
     AddplacedStudentsComponent,
     ProfileComponent,
     ApplyComponent,
-    UpcomingdrivesComponent,
-    CheckResultsComponent,
+    AllCompaniesComponent,
+    MyDrivesComponent,
     DriveDetailsComponent,
     StudentDetailsComponent,
     CompanyDetailsComponent,
