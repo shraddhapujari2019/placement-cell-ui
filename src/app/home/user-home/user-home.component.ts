@@ -28,19 +28,19 @@ export class UserHomeComponent implements OnInit {
 
     switch (navigation) {
 
-      case 'company':
-        this.selectedTab = "company";
+      case 'drive':
+        this.selectedTab = "drive";
         this.router.navigate(['/userhome/apply-new']);
         break;
 
-      case 'drive':
-        this.selectedTab = "drive";
-        this.router.navigate(['/userhome/upcoming']);
+      case 'allCompanies':
+        this.selectedTab = "allCompanies";
+        this.router.navigate(['/userhome/allCompanies']);
         break;
 
-      case 'results':
-        this.selectedTab = "results";
-        this.router.navigate(['/userhome/check-results']);
+      case 'myDrives':
+        this.selectedTab = "myDrives";
+        this.router.navigate(['/userhome/my-drives']);
         break;
 
       default: this.router.navigate[''];

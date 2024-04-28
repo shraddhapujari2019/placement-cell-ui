@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from 'src/app/service/student.service';
+import { AdminService } from 'src/app/service/admin.service';
 
 @Component({
   selector: 'app-upcomingdrives',
-  templateUrl: './upcomingdrives.component.html',
-  styleUrls: ['./upcomingdrives.component.css']
+  templateUrl: './all-companies.component.html',
+  styleUrls: ['./all-companies.component.css']
 })
-export class UpcomingdrivesComponent implements OnInit {
+export class AllCompaniesComponent implements OnInit {
 
   companyList: any;
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService, private adminService: AdminService) { }
 
   ngOnInit(): void {
-    this.getDriveList();
+    this.getCompanyList();
   }
 
-  getDriveList() {
-    this.studentService.fetchDriveList().subscribe(res => {
+  getCompanyList() {
+    this.adminService.fetchCompanyList().subscribe(res => {
       this.companyList = res;
 
       // this.companyList=[...this.companyList,...this.companyList, ...this.companyList];

@@ -6,6 +6,7 @@
                 <th scope="col">Company Name</th>
                 <th scope="col">Drive Date</th>
                 <th scope="col">Drive Location</th>
+                <th scope="col">Offered CTC</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -15,6 +16,7 @@
                 <td>{{item?.companyId}}</td>
                 <td>{{item?.driveDate | date:'dd MMM yyyy'}}</td>
                 <td>{{item?.driveLocation}}</td>
+                <td>{{item?.offeredCtc}}</td>
                 <td><button type="button" class="btn btn-primary" (click)="applyNow(item)">Apply Now !</button></td>
             </tr>
 

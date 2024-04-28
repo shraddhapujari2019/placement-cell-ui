@@ -12,8 +12,8 @@ import { AdddrivedetailsComponent } from './components/admin-components/adddrive
 import { AddplacedStudentsComponent } from './components/admin-components/addplaced-students/addplaced-students.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ApplyComponent } from './components/student-components/apply/apply.component';
-import { UpcomingdrivesComponent } from './components/student-components/upcomingDrives/upcomingdrives.component';
-import { CheckResultsComponent } from './components/student-components/check-results/check-results.component';
+import { AllCompaniesComponent } from './components/student-components/all-companies/all-companies.component';
+import { MyDrivesComponent } from './components/student-components/my-drives/my-drives.component';
 import { RegisterComponent } from './login/register/register.component';
 
 
@@ -55,12 +55,12 @@ const routes: Routes = [
         component: ApplyComponent
       },
       {
-        path: 'upcoming',
-        component: UpcomingdrivesComponent
+        path: 'allCompanies',
+        component: AllCompaniesComponent
       },
       {
-        path: 'check-results',
-        component: CheckResultsComponent
+        path: 'my-drives',
+        component: MyDrivesComponent
       }
     ]
   },
