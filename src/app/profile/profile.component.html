@@ -1,5 +1,5 @@
 <div *ngIf="studentProfile!=undefined && studentProfile!=null">
-    <p><b>Full Name:</b> {{studentProfile.middleName}} {{studentProfile.lastName}}></p>
+    <p><b>Full Name:</b>{{studentProfile.firstName}} {{studentProfile.middleName}} {{studentProfile.lastName}}</p>
     <p><b>Roll No.:</b> {{studentProfile.rollNumber}}</p>
     <p><b>Date of Birth:</b> {{studentProfile.dateOfBirth|date:'dd-MMM-yyyy'}}</p>
     <p><b>Gender:</b> {{studentProfile.gender}}</p>

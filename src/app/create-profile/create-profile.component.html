@@ -29,7 +29,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Middle Name <span class="redLabel">*</span></label>
+                            <label class="pt-1">Middle Name <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Middle Name"
                                 [(ngModel)]="studentProfile.middleName" name="middleName"
                                 [ngClass]="{ 'is-invalid': middleName.errors && middleName.touched }" #middleName="ngModel">
@@ -321,10 +321,10 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Highest Qualification<span class="redLabel">*</span></label>
+                            <label class="pt-1">Highest Qualification<span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Highest Qualification"
                                 [(ngModel)]="studentProfile.highestQualificationName" name="highestQualificationName"
-                                [ngClass]="{ 'is-invalid': highestQualificationName.errors && highestQualificationName.touched }" #highestQualificationName="ngModel" required>
+                                [ngClass]="{ 'is-invalid': highestQualificationName.errors && highestQualificationName.touched }" #highestQualificationName="ngModel">
                             <div *ngIf="highestQualificationName.touched && highestQualificationName.errors">
                                 <div class="error-msg" *ngIf="highestQualificationName.errors?.required">
                                     Highest Qualification is required<br>
@@ -335,10 +335,10 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Highest Qualification Passing Year<span class="redLabel">*</span></label>
+                            <label class="pt-1">Highest Qualification Passing Year<span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Highest Qualification Passing Year"
                                 [(ngModel)]="studentProfile.highestQualificationPassingYear" name="highestQualificationPassingYear"
-                                [ngClass]="{ 'is-invalid': highestQualificationPassingYear.errors && highestQualificationPassingYear.touched }" #highestQualificationPassingYear="ngModel" required>
+                                [ngClass]="{ 'is-invalid': highestQualificationPassingYear.errors && highestQualificationPassingYear.touched }" #highestQualificationPassingYear="ngModel">
                             <div *ngIf="highestQualificationPassingYear.touched && highestQualificationPassingYear.errors">
                                 <div class="error-msg" *ngIf="highestQualificationPassingYear.errors?.required">
                                     Highest Qualification Passing Year is required<br>
@@ -349,10 +349,10 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Highest Qualification Marks<span class="redLabel">*</span></label>
+                            <label class="pt-1">Highest Qualification Marks<span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Highest Qualification Marks"
                                 [(ngModel)]="studentProfile.highestQualificationMarks" name="highestQualificationMarks"
-                                [ngClass]="{ 'is-invalid': highestQualificationMarks.errors && highestQualificationMarks.touched }" #highestQualificationMarks="ngModel" required>
+                                [ngClass]="{ 'is-invalid': highestQualificationMarks.errors && highestQualificationMarks.touched }" #highestQualificationMarks="ngModel">
                             <div *ngIf="highestQualificationMarks.touched && highestQualificationMarks.errors">
                                 <div class="error-msg" *ngIf="highestQualificationMarks.errors?.required">
                                     Highest Qualification Marks is required<br>
@@ -363,7 +363,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Other Graduation<span class="redLabel">*</span></label>
+                            <label class="pt-1">Other Graduation<span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Other Graduation"
                                 [(ngModel)]="studentProfile.otherGraduationName" name="otherGraduationName"
                                 [ngClass]="{ 'is-invalid': otherGraduationName.errors && otherGraduationName.touched }" #otherGraduationName="ngModel" >
@@ -377,7 +377,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Other Graduation Passing Year<span class="redLabel">*</span></label>
+                            <label class="pt-1">Other Graduation Passing Year<span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Other Graduation Passing Year"
                                 [(ngModel)]="studentProfile.otherGraduationPassingYear" name="otherGraduationPassingYear"
                                 [ngClass]="{ 'is-invalid': otherGraduationPassingYear.errors && otherGraduationPassingYear.touched }" #otherGraduationPassingYear="ngModel" >
@@ -391,7 +391,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Other Graduation Marks<span class="redLabel">*</span></label>
+                            <label class="pt-1">Other Graduation Marks<span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Other Graduation Marks"
                                 [(ngModel)]="studentProfile.otherGraduationMarks" name="otherGraduationMarks"
                                 [ngClass]="{ 'is-invalid': otherGraduationMarks.errors && otherGraduationMarks.touched }" #otherGraduationMarks="ngModel">
@@ -429,7 +429,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Gap Start Date <span class="redLabel">*</span></label>
+                            <label class="pt-1">Gap Start Date <span class="redLabel"></span></label>
                             <input type="date" class="form-control " value="" placeholder="Enter Gap Start Date"
                                 [(ngModel)]="studentProfile.gapStartDate" name="gapStartDate"
                                 [ngClass]="{ 'is-invalid': gapStartDate.errors && gapStartDate.touched }" #gapStartDate="ngModel">
@@ -442,7 +442,7 @@
                     </div>
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Gap End Date <span class="redLabel">*</span></label>
+                            <label class="pt-1">Gap End Date <span class="redLabel"></span></label>
                             <input type="date" class="form-control " value="" placeholder="Enter Gap End Date"
                                 [(ngModel)]="studentProfile.gapEndDate" name="gapEndDate"
                                 [ngClass]="{ 'is-invalid': gapEndDate.errors && gapEndDate.touched }" #gapEndDate="ngModel">
@@ -456,10 +456,10 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Sem 1 SGPA <span class="redLabel">*</span></label>
+                            <label class="pt-1">Sem 1 SGPA <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Sem 1 SGPA "
                                 [(ngModel)]="studentProfile.sem1Sgpa" name="sem1Sgpa"
-                                [ngClass]="{ 'is-invalid': sem1Sgpa.errors && sem1Sgpa.touched }" #sem1Sgpa="ngModel" required>
+                                [ngClass]="{ 'is-invalid': sem1Sgpa.errors && sem1Sgpa.touched }" #sem1Sgpa="ngModel" >
                             <div *ngIf="sem1Sgpa.touched && sem1Sgpa.errors">
                                 <div class="error-msg" *ngIf="sem1Sgpa.errors?.required">
                                     Sem 1 SGPA is required<br>
@@ -469,10 +469,10 @@
                     </div> 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Sem 2 SGPA <span class="redLabel">*</span></label>
+                            <label class="pt-1">Sem 2 SGPA <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Sem 2 SGPA "
                                 [(ngModel)]="studentProfile.sem2Sgpa" name="sem2Sgpa"
-                                [ngClass]="{ 'is-invalid': sem2Sgpa.errors && sem2Sgpa.touched }" #sem2Sgpa="ngModel" required>
+                                [ngClass]="{ 'is-invalid': sem2Sgpa.errors && sem2Sgpa.touched }" #sem2Sgpa="ngModel" >
                             <div *ngIf="sem2Sgpa.touched && sem2Sgpa.errors">
                                 <div class="error-msg" *ngIf="sem2Sgpa.errors?.required">
                                     Sem 2 SGPA is required<br>
@@ -482,10 +482,10 @@
                     </div>
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Sem 3 SGPA <span class="redLabel">*</span></label>
+                            <label class="pt-1">Sem 3 SGPA <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Sem 3 SGPA "
                                 [(ngModel)]="studentProfile.sem3Sgpa" name="sem3Sgpa"
-                                [ngClass]="{ 'is-invalid': sem3Sgpa.errors && sem3Sgpa.touched }" #sem3Sgpa="ngModel" required>
+                                [ngClass]="{ 'is-invalid': sem3Sgpa.errors && sem3Sgpa.touched }" #sem3Sgpa="ngModel" >
                             <div *ngIf="sem3Sgpa.touched && sem3Sgpa.errors">
                                 <div class="error-msg" *ngIf="sem3Sgpa.errors?.required">
                                     Sem 3 SGPA is required<br>
@@ -495,10 +495,10 @@
                     </div>
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Sem 4 SGPA <span class="redLabel">*</span></label>
+                            <label class="pt-1">Sem 4 SGPA <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Sem 4 SGPA "
                                 [(ngModel)]="studentProfile.sem4Sgpa" name="sem4Sgpa"
-                                [ngClass]="{ 'is-invalid': sem4Sgpa.errors && sem4Sgpa.touched }" #sem4Sgpa="ngModel" required>
+                                [ngClass]="{ 'is-invalid': sem4Sgpa.errors && sem4Sgpa.touched }" #sem4Sgpa="ngModel" >
                             <div *ngIf="sem4Sgpa.touched && sem4Sgpa.errors">
                                 <div class="error-msg" *ngIf="sem4Sgpa.errors?.required">
                                     Sem 4 SGPA is required<br>
@@ -508,10 +508,10 @@
                     </div>
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Aggregate CGPA <span class="redLabel">*</span></label>
+                            <label class="pt-1">Aggregate CGPA <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Aggregate CGPA "
                                 [(ngModel)]="studentProfile.aggCgpa" name="aggCgpa"
-                                [ngClass]="{ 'is-invalid': aggCgpa.errors && aggCgpa.touched }" #aggCgpa="ngModel" required>
+                                [ngClass]="{ 'is-invalid': aggCgpa.errors && aggCgpa.touched }" #aggCgpa="ngModel" >
                             <div *ngIf="aggCgpa.touched && aggCgpa.errors">
                                 <div class="error-msg" *ngIf="aggCgpa.errors?.required">
                                     Aggregate CGPA is required<br>
@@ -544,7 +544,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Active Backlogs <span class="redLabel">*</span></label>
+                            <label class="pt-1">Active Backlogs <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Active Backlogs "
                                 [(ngModel)]="studentProfile.activeBacklog" name="activeBacklog"
                                 [ngClass]="{ 'is-invalid': activeBacklog.errors && activeBacklog.touched }" #activeBacklog="ngModel">
@@ -558,7 +558,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Total Backlogs <span class="redLabel">*</span></label>
+                            <label class="pt-1">Total Backlogs <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Total Backlogs "
                                 [(ngModel)]="studentProfile.totalBacklog" name="totalBacklog"
                                 [ngClass]="{ 'is-invalid': totalBacklog.errors && totalBacklog.touched }" #totalBacklog="ngModel">
@@ -572,7 +572,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Experience <span class="redLabel">*</span></label>
+                            <label class="pt-1">Experience <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Experience "
                                 [(ngModel)]="studentProfile.experience" name="experience"
                                 [ngClass]="{ 'is-invalid': experience.errors && experience.touched }" #experience="ngModel">
@@ -585,7 +585,7 @@
                     </div>
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Experience Start Date <span class="redLabel">*</span></label>
+                            <label class="pt-1">Experience Start Date <span class="redLabel"></span></label>
                             <input type="date" class="form-control " value="" placeholder="Enter Experience Start Date"
                                 [(ngModel)]="studentProfile.experienceStartDate" name="experienceStartDate"
                                 [ngClass]="{ 'is-invalid': experienceStartDate.errors && experienceStartDate.touched }" #experienceStartDate="ngModel">
@@ -598,7 +598,7 @@
                     </div>
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Experience End Date <span class="redLabel">*</span></label>
+                            <label class="pt-1">Experience End Date <span class="redLabel"></span></label>
                             <input type="date" class="form-control " value="" placeholder="Enter Experience End Date"
                                 [(ngModel)]="studentProfile.experienceEndDate" name="experienceEndDate"
                                 [ngClass]="{ 'is-invalid': experienceEndDate.errors && experienceEndDate.touched }" #experienceEndDate="ngModel">
@@ -612,7 +612,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Company <span class="redLabel">*</span></label>
+                            <label class="pt-1">Company <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Company Name "
                                 [(ngModel)]="studentProfile.companyName" name="companyName"
                                 [ngClass]="{ 'is-invalid': companyName.errors && companyName.touched }" #companyName="ngModel">
@@ -626,7 +626,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Position <span class="redLabel">*</span></label>
+                            <label class="pt-1">Position <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Position"
                                 [(ngModel)]="studentProfile.position" name="position"
                                 [ngClass]="{ 'is-invalid': position.errors && position.touched }" #position="ngModel">
@@ -640,7 +640,7 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Role <span class="redLabel">*</span></label>
+                            <label class="pt-1">Role <span class="redLabel"></span></label>
                             <input type="text" class="form-control " value="" placeholder="Enter Role"
                                 [(ngModel)]="studentProfile.role" name="role"
                                 [ngClass]="{ 'is-invalid': role.errors && role.touched }" #role="ngModel">
