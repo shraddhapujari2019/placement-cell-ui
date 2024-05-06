@@ -1,4 +1,12 @@
-<div class="px-5 py-2">
+
+
+<div class="h-100 d-flex align-items-center justify-content-center" *ngIf="driveList?.length ==0">
+    <div class="no-drive">
+        You have not applied for any Drive , Please Apply !
+    </div>
+</div>
+
+<div class="px-5 py-2" *ngIf="driveList?.length > 0">
     <table class="table table-striped">
         <thead>
             <tr>

@@ -9,10 +9,14 @@ import { StudentService } from 'src/app/service/student.service';
 export class ApplyComponent implements OnInit {
 
   companyList: any;
+  appliedCompanyList: [];
+  applyNowBtnTxt = "Apply Now !";
+  alreadyAppliedBtnTxt = "Already Applied";
   constructor(private studentService: StudentService) { }
 
   ngOnInit(): void {
     this.getDriveList();
+    this.fetchAppliedDriveList();
   }
 
   getDriveList() {
@@ -24,12 +28,41 @@ export class ApplyComponent implements OnInit {
     })
   }
 
-  applyNow(drive){
+  applyNow(drive) {
     //To do after navigation
     let username = localStorage.getItem("userId");
-    alert("Applying for company : => " + drive?.companyName + " at "+drive?.driveLocation);
+    alert("Applying for company : => " + drive?.companyName + " at " + drive?.driveLocation);
     this.studentService.applyForDrive(username, drive.driveId).subscribe(res => {
       alert("Applied successfully!");
+      this.ngOnInit();
     })
+  }
+
+  isApplyDisabled(driveDetails): boolean {
+    let currentDate = Date.now();
+
+    let lastDateToApply = new Date(driveDetails?.driveDate);
+
+    let applyDaysInterval = 1000 * 60 * 60 * 24 * 5;
+
+    if ((lastDateToApply.getTime() - currentDate) > applyDaysInterval) {
+      return true;
+    }
+
+    return false;
+  }
+
+  fetchAppliedDriveList() {
+    let username = localStorage.getItem("userId");
+    this.studentService.fetchDriveListByStudent(username).subscribe((res: any) => {
+      this.appliedCompanyList = res;
+    })
+  }
+
+  isAlreadyAppliedDrive(currentDriveId): boolean {
+    if (this.appliedCompanyList.find(ele => ele['driveId'] == currentDriveId)) {
+      return true;
+    }
+    return false;
   }
 }

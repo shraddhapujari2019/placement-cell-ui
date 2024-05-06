@@ -1,0 +1,10 @@
+.no-drive{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.no-drive:hover{
+    transform: scale(1.5);
+    color: blueviolet;
+    cursor: pointer;
+}

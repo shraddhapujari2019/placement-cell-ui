@@ -81,14 +81,14 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Job Location<span class="redLabel"> *</span></label>
-                            <input type="text" class="form-control " value="" placeholder="Enter Job Location "
+                            <label class="pt-1">Company Location<span class="redLabel"> *</span></label>
+                            <input type="text" class="form-control " value="" placeholder="Enter Company Location "
                                 [(ngModel)]="companyDetails.job_location" name="location"
                                 [ngClass]="{ 'is-invalid': location.errors && location.touched }" #location="ngModel"
                                 required>
                             <div *ngIf="location.touched && location.errors">
                                 <div class="error-msg" *ngIf="location.errors?.required">
-                                    Job Location is required<br>
+                                    Company Location is required<br>
                                 </div>
                             </div>
                         </div>

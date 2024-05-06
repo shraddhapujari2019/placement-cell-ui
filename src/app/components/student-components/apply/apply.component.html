@@ -17,7 +17,19 @@
                 <td>{{item?.driveDate | date:'dd MMM yyyy'}}</td>
                 <td>{{item?.driveLocation}}</td>
                 <td>{{item?.offeredCtc}}</td>
-                <td><button type="button" class="btn btn-primary" (click)="applyNow(item)">Apply Now !</button></td>
+                <td>
+                    <button *ngIf="!isAlreadyAppliedDrive(item.driveId)" type="button" class="btn btn-primary"
+                        (click)="applyNow(item)" [disabled]="!isApplyDisabled(item)"
+                        [ngClass]="!isApplyDisabled(item) ? 'btn btn-secondary':'btn btn-primary'"
+                        title="{{(!isApplyDisabled(item)) ? 'Apply Date is Passed' :'Click To Apply'}}">
+                        {{this.applyNowBtnTxt}}
+                    </button>
+
+                    <button *ngIf="isAlreadyAppliedDrive(item.driveId)" type="button" class="btn btn-success"
+                        title="You Have Already Applied For this Drive">
+                        {{this.alreadyAppliedBtnTxt}}
+                    </button>
+                </td>
             </tr>
 
         </tbody>

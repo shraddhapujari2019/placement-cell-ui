@@ -15,6 +15,7 @@ import { ApplyComponent } from './components/student-components/apply/apply.comp
 import { AllCompaniesComponent } from './components/student-components/all-companies/all-companies.component';
 import { MyDrivesComponent } from './components/student-components/my-drives/my-drives.component';
 import { RegisterComponent } from './login/register/register.component';
+import { CreateProfileComponent } from './create-profile/create-profile.component';
 
 
 const routes: Routes = [
@@ -69,6 +70,10 @@ const routes: Routes = [
     component: ProfileComponent
   },
   {
+    path: 'create-profile',
+    component: CreateProfileComponent
+  },
+  {
     path: "adminhome",
     component: AdminHomeComponent,
     children: [
@@ -82,19 +87,19 @@ const routes: Routes = [
       {
         path: 'add-company-details',
         component: AddcompanydetailsComponent,
-        data:{tab:'company'}
+        data: { tab: 'company' }
       },
 
       {
         path: 'add-drive-details',
         component: AdddrivedetailsComponent,
-        data:{tab:'drive'}
+        data: { tab: 'drive' }
       },
 
       {
         path: 'add-placement-details',
         component: AddplacedStudentsComponent,
-        data:{tab:'placement'}
+        data: { tab: 'placement' }
       }
 
     ],

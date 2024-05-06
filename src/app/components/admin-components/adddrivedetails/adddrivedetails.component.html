@@ -85,10 +85,10 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">SSC Marks<span class="redLabel"> *</span></label>
+                            <label class="pt-1">SSC Marks<span class="redLabel"> </span></label>
                             <input type="number" class="form-control " value="" placeholder="Enter SSC Marks "
                                 [(ngModel)]="drive.sscMarks" name="SSC"
-                                [ngClass]="{ 'is-invalid': SSC.errors && SSC.touched }" #SSC="ngModel" required>
+                                [ngClass]="{ 'is-invalid': SSC.errors && SSC.touched }" #SSC="ngModel">
                             <div *ngIf="SSC.touched && SSC.errors">
                                 <div class="error-msg" *ngIf="SSC.errors?.required">
                                     SSC Marks are required<br>
@@ -99,10 +99,10 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">HSC Marks<span class="redLabel"> *</span></label>
+                            <label class="pt-1">HSC Marks<span class="redLabel"> </span></label>
                             <input type="number" class="form-control " value="" placeholder="Enter HSC Marks "
                                 [(ngModel)]="drive.hscMarks" name="HSC"
-                                [ngClass]="{ 'is-invalid': HSC.errors && HSC.touched }" #HSC="ngModel" required>
+                                [ngClass]="{ 'is-invalid': HSC.errors && HSC.touched }" #HSC="ngModel">
                             <div *ngIf="HSC.touched && HSC.errors">
                                 <div class="error-msg" *ngIf="HSC.errors?.required">
                                     HSC Marks are required<br>
@@ -113,11 +113,11 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Graduation Marks/CGPA<span class="redLabel"> *</span></label>
+                            <label class="pt-1">Graduation Marks/CGPA<span class="redLabel"> </span></label>
                             <input type="number" class="form-control " value="" placeholder="Enter Marks or CGPA of your recent degree"
                                 [(ngModel)]="drive.graduationMarks" name="Graduation"
                                 [ngClass]="{ 'is-invalid': Graduation.errors && Graduation.touched }"
-                                #Graduation="ngModel" required>
+                                #Graduation="ngModel">
                             <div *ngIf="Graduation.touched && Graduation.errors">
                                 <div class="error-msg" *ngIf="Graduation.errors?.required">
                                     Graduation Marks/CGPA are required<br>
@@ -129,12 +129,12 @@
                     <!-- Dropdown to select if Active backlogs are allowed or not -->
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0">
-                            <label>Is Active Backlog allowed?<span class="redDanger"> * </span>
+                            <label>Is Active Backlog allowed?<span class="redDanger"> </span>
                             </label>
                             <select class="form-control" [(ngModel)]="drive.isActiveBacklogAllowed" name="ActiveBacklogAllowed"
                                 #ActiveBacklogAllowed="ngModel"
                                 [ngClass]="{ 'is-invalid': ActiveBacklogAllowed.errors && ActiveBacklogAllowed.touched }"
-                                required>
+                                >
                                 <option hidden [value]="undefined" selected>Select if Active Backlogs are allowed</option>
                                 <option value="Y">Yes
                                 </option>
@@ -166,12 +166,12 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Max Number of Active Backlogs Allowed<span class="redLabel"> *</span></label>
+                            <label class="pt-1">Max Number of Active Backlogs Allowed<span class="redLabel"> </span></label>
                             <input type="number" class="form-control " value=""
                                 placeholder="Enter Max Number of Active Backlogs Allowed"
                                 [(ngModel)]="drive.maxActiveBacklogAllowed" name="MaxActiveBacklogs"
                                 [ngClass]="{ 'is-invalid': MaxActiveBacklogs.errors && MaxActiveBacklogs.touched }"
-                                #MaxActiveBacklogs="ngModel" required>
+                                #MaxActiveBacklogs="ngModel">
                             <div *ngIf="MaxActiveBacklogs.touched && MaxActiveBacklogs.errors">
                                 <div class="error-msg" *ngIf="MaxActiveBacklogs.errors?.required">
                                     Max Number of Active Backlogs Allowed are required<br>
@@ -184,12 +184,12 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0">
-                            <label>Are Past Backlogs allowed?<span class="redDanger"> * </span>
+                            <label>Are Past Backlogs allowed?<span class="redDanger"> </span>
                             </label>
                             <select class="form-control" [(ngModel)]="drive.isTotalBacklogAllowed" name="TotalBacklogAllowed"
                                 #TotalBacklogAllowed="ngModel"
                                 [ngClass]="{ 'is-invalid': TotalBacklogAllowed.errors && TotalBacklogAllowed.touched }"
-                                required>
+                                >
                                 <option hidden [value]="undefined" selected>Select if Active Backlogs are allowed</option>
                                 <option value="Y">Yes
                                 </option>
@@ -222,12 +222,12 @@
 
                     <div class="col-12 col-lg-4 col-md-3 mb-2">
                         <div class="form-group mr-1 p-0 mb-0 ">
-                            <label class="pt-1">Max Number of Past Backlogs Allowed<span class="redLabel"> *</span></label>
+                            <label class="pt-1">Max Number of Past Backlogs Allowed<span class="redLabel"></span></label>
                             <input type="number" class="form-control " value=""
                                 placeholder="Enter Max Number of Past Backlogs Allowed"
                                 [(ngModel)]="drive.maxTotalBacklogAllowed" name="MaxHistBacklog"
                                 [ngClass]="{ 'is-invalid': MaxHistBacklog.errors && MaxHistBacklog.touched }"
-                                #MaxHistBacklog="ngModel" required>
+                                #MaxHistBacklog="ngModel">
                             <div *ngIf="MaxHistBacklog.touched && MaxHistBacklog.errors">
                                 <div class="error-msg" *ngIf="MaxHistBacklog.errors?.required">
                                     Max Number of Past Backlogs Allowed are required<br>
