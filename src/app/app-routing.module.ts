@@ -16,6 +16,7 @@ import { AllCompaniesComponent } from './components/student-components/all-compa
 import { MyDrivesComponent } from './components/student-components/my-drives/my-drives.component';
 import { RegisterComponent } from './login/register/register.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { AllCompaniesListComponent } from './components/admin-components/listallcompanies/listallcompanies';
 
 
 const routes: Routes = [
@@ -100,6 +101,11 @@ const routes: Routes = [
         path: 'add-placement-details',
         component: AddplacedStudentsComponent,
         data: { tab: 'placement' }
+      },
+
+      {
+        path: 'list-all-companies',
+        component: AllCompaniesListComponent
       }
 
     ],

@@ -28,6 +28,9 @@ export class AdminHomeComponent implements OnInit {
 
     } else if (window.location.href.includes('/add-placement-details')) {
       this.selectedTab = "placement"
+    
+    } else if (window.location.href.includes('/list-all-companies')) {
+      this.selectedTab = "allcompanies"
 
     } else {
       this.selectedTab = "";
@@ -58,6 +61,11 @@ export class AdminHomeComponent implements OnInit {
         this.selectedTab = "placement";
         this.router.navigate(['/adminhome/add-placement-details']);
         break;
+
+        case 'allcompanies':
+          this.selectedTab = "allcompanies";
+          this.router.navigate(['/adminhome/list-all-companies']);
+          break;
 
       default: this.router.navigate[''];
 

@@ -26,16 +26,20 @@
 </nav> -->
 
 <!-- Main Content -->
+<body style="background-color: rgb(229, 233, 147);">
 <main>
   <div>
     <br /><br /><br /><br /><br /><br />
-    <p class="text-secondary text-center">
-      Welcome to the Placement Cell of {{ collegeName }}. Our mission is to
-      connect students with potential employers and facilitate placements.
-    </p>
+    <h5 class="text-secondary text-center">
+      Welcome to the Placement Cell of <br />
+      <span style="color: rgb(0, 0, 255);">{{ collegeName }}.</span>
+      
+    </h5>
   </div>
   <div class="text-secondary text-center">
-    <p>New student? <a [routerLink]="['/register']">Register</a> here</p>
+    <p>Our mission is to
+      connect students with potential employers and facilitate placements.</p>
+    <p>New student? <a [routerLink]="['/register']">Register here</a> </p>
   </div>
 </main>
 
@@ -50,3 +54,4 @@
     <p>&copy; 2024 {{ collegeName }} Placement Cell</p>
   </div>
 </footer>
+</body>

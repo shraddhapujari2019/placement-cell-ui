@@ -24,6 +24,7 @@ import { StudentDetailsComponent } from './details/student-details/student-detai
 import { CompanyDetailsComponent } from './details/company-details/company-details.component';
 import { RegisterComponent } from './login/register/register.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { AllCompaniesListComponent } from './components/admin-components/listallcompanies/listallcompanies';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CreateProfileComponent } from './create-profile/create-profile.componen
     StudentDetailsComponent,
     CompanyDetailsComponent,
     RegisterComponent,
-    CreateProfileComponent
+    CreateProfileComponent,
+    AllCompaniesListComponent
   ],
   imports: [
     BrowserModule,
