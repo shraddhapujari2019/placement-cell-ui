@@ -17,6 +17,7 @@ import { MyDrivesComponent } from './components/student-components/my-drives/my-
 import { RegisterComponent } from './login/register/register.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { AllCompaniesListComponent } from './components/admin-components/listallcompanies/listallcompanies';
+import { AllStudents } from './components/admin-components/listallstudents/listallstudents';
 
 
 const routes: Routes = [
@@ -106,6 +107,11 @@ const routes: Routes = [
       {
         path: 'list-all-companies',
         component: AllCompaniesListComponent
+      },
+
+      {
+        path: 'list-all-students',
+        component: AllStudents
       }
 
     ],

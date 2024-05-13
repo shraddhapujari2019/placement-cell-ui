@@ -23,6 +23,7 @@ export class AdminHomeComponent implements OnInit {
 
     if (window.location.href.includes('/add-company-details')) {
       this.selectedTab = "company"
+
     } else if (window.location.href.includes('/add-drive-details')) {
       this.selectedTab = "drive"
 
@@ -31,6 +32,9 @@ export class AdminHomeComponent implements OnInit {
     
     } else if (window.location.href.includes('/list-all-companies')) {
       this.selectedTab = "allcompanies"
+
+    } else if (window.location.href.includes('/list-all-students')) {
+      this.selectedTab = "allstudents"
 
     } else {
       this.selectedTab = "";
@@ -62,10 +66,15 @@ export class AdminHomeComponent implements OnInit {
         this.router.navigate(['/adminhome/add-placement-details']);
         break;
 
-        case 'allcompanies':
-          this.selectedTab = "allcompanies";
-          this.router.navigate(['/adminhome/list-all-companies']);
-          break;
+      case 'allcompanies':
+        this.selectedTab = "allcompanies";
+        this.router.navigate(['/adminhome/list-all-companies']);
+        break;
+      
+      case 'allstudents':
+        this.selectedTab = "allstudents";
+        this.router.navigate(['/adminhome/list-all-students']);
+        break;
 
       default: this.router.navigate[''];
 
